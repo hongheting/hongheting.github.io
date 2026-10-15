@@ -29,6 +29,22 @@
     }
   }
 
+  function isLinkableDoi(value) {
+    if (!value || typeof value !== "string") return false;
+    const v = value.trim();
+    if (!v || v === "待补充") return false;
+    return /^https?:\/\//i.test(v) || /^10\.\d{4,}\//.test(v);
+  }
+
+  function isPending(value) {
+    const v = (value || "").trim();
+    return !v || v === "待补充";
+  }
+
+  function pendingText(value) {
+    return isPending(value) ? "待补充" : String(value).trim();
+  }
+
   // —— Hero ——
   const avatar = el("avatar");
   if (avatar) {
@@ -92,12 +108,20 @@
       const links = document.createElement("div");
       links.className = "pub-links";
       if (p.doi) {
-        const a = document.createElement("a");
-        a.href = p.doi.startsWith("http") ? p.doi : "https://doi.org/" + p.doi;
-        a.target = "_blank";
-        a.rel = "noopener noreferrer";
-        a.textContent = "DOI";
-        links.appendChild(a);
+        if (isLinkableDoi(p.doi)) {
+          const a = document.createElement("a");
+          const doi = p.doi.trim();
+          a.href = /^https?:\/\//i.test(doi) ? doi : "https://doi.org/" + doi;
+          a.target = "_blank";
+          a.rel = "noopener noreferrer";
+          a.textContent = "DOI";
+          links.appendChild(a);
+        } else {
+          const span = document.createElement("span");
+          span.className = "is-pending";
+          span.textContent = "DOI：" + p.doi.trim();
+          links.appendChild(span);
+        }
       }
       if (p.pdf) {
         const a = document.createElement("a");
@@ -125,6 +149,143 @@
       }
 
       pubRoot.appendChild(li);
+    });
+  }
+
+  // —— Conferences & talks ——
+  const talkRoot = el("talk-list");
+  if (talkRoot && Array.isArray(C.conferences)) {
+    talkRoot.innerHTML = "";
+    C.conferences.forEach(function (item) {
+      const card = document.createElement("article");
+      card.className = "talk-card";
+
+      if (item.photo) {
+        const figure = document.createElement("figure");
+        figure.className = "talk-photo";
+        const img = document.createElement("img");
+        img.src = item.photo;
+        img.alt = item.photoCaption || ((item.nameZh || "学术会议") + (item.type ? " " + item.type : ""));
+        img.addEventListener("error", function () {
+          figure.hidden = true;
+          card.classList.add("talk-card--no-photo");
+        });
+        figure.appendChild(img);
+        if (item.photoCaption) {
+          const cap = document.createElement("figcaption");
+          cap.textContent = item.photoCaption;
+          figure.appendChild(cap);
+        }
+        card.appendChild(figure);
+      } else {
+        card.classList.add("talk-card--no-photo");
+      }
+
+      const body = document.createElement("div");
+      body.className = "talk-body";
+
+      if (item.type) {
+        const type = document.createElement("p");
+        type.className = "talk-type";
+        type.textContent = item.type;
+        body.appendChild(type);
+      }
+
+      const name = document.createElement("p");
+      name.className = "talk-name";
+      name.textContent = item.nameZh || "";
+      body.appendChild(name);
+
+      if (item.nameEn) {
+        const nameEn = document.createElement("p");
+        nameEn.className = "talk-name-en";
+        nameEn.textContent = item.nameEn;
+        body.appendChild(nameEn);
+      }
+
+      const title = document.createElement("h3");
+      title.className = "talk-title";
+      title.textContent = item.titleZh || "";
+      body.appendChild(title);
+
+      if (item.titleEn) {
+        const titleEn = document.createElement("p");
+        titleEn.className = "talk-title-en";
+        titleEn.textContent = item.titleEn;
+        body.appendChild(titleEn);
+      }
+
+      if (item.summary) {
+        const summary = document.createElement("p");
+        summary.className = "talk-summary";
+        summary.textContent = item.summary;
+        body.appendChild(summary);
+      }
+
+      const facts = document.createElement("dl");
+      facts.className = "talk-facts";
+      [
+        ["日期", item.date],
+        ["地点", item.location],
+      ].forEach(function (pair) {
+        const row = document.createElement("div");
+        const dt = document.createElement("dt");
+        dt.textContent = pair[0];
+        const dd = document.createElement("dd");
+        dd.textContent = pendingText(pair[1]);
+        if (isPending(pair[1])) dd.className = "is-pending";
+        row.appendChild(dt);
+        row.appendChild(dd);
+        facts.appendChild(row);
+      });
+      body.appendChild(facts);
+
+      if (item.relatedPaper) {
+        const related = document.createElement("p");
+        related.className = "talk-related";
+        const label = document.createElement("span");
+        label.className = "talk-related-label";
+        label.textContent = "相关论文";
+        related.appendChild(label);
+
+        const rel = item.relatedPaper;
+        const cite = document.createElement("a");
+        cite.href = "#publications";
+        if (typeof rel === "string") {
+          cite.textContent = rel;
+          related.appendChild(cite);
+        } else {
+          const bits = [];
+          if (!isPending(rel.title)) bits.push(rel.title);
+          if (rel.authors) bits.push(rel.authors);
+          if (rel.venue) bits.push(rel.venue);
+          if (rel.year) bits.push(String(rel.year));
+          cite.textContent = bits.join(", ");
+          related.appendChild(cite);
+
+          const pendingBits = [];
+          if (isPending(rel.title)) pendingBits.push("题名");
+          if (isPending(rel.doi)) pendingBits.push("DOI");
+          if (pendingBits.length) {
+            const pending = document.createElement("span");
+            pending.className = "is-pending";
+            pending.textContent = pendingBits.join("、") + "：待补充";
+            related.appendChild(pending);
+          } else if (isLinkableDoi(rel.doi)) {
+            const doiLink = document.createElement("a");
+            const doi = rel.doi.trim();
+            doiLink.href = /^https?:\/\//i.test(doi) ? doi : "https://doi.org/" + doi;
+            doiLink.target = "_blank";
+            doiLink.rel = "noopener noreferrer";
+            doiLink.textContent = "DOI";
+            related.appendChild(doiLink);
+          }
+        }
+        body.appendChild(related);
+      }
+
+      card.appendChild(body);
+      talkRoot.appendChild(card);
     });
   }
 

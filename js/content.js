@@ -44,18 +44,18 @@ window.SITE_CONTENT = {
     },
   ],
 
-  // —— 论文列表（待用户补充真实条目）——
+  // —— 论文列表 ——
   // 每条可含：year, title, authors, venue, doi, pdf, link
+  // 题名或 DOI 未知时写「待补充」，不要猜测
   publications: [
     {
-      year: "待补充",
-      title: "论文标题（待补充）",
-      authors: "Hong Heting, et al.",
-      venue: "期刊 / 会议名称（待补充）",
-      doi: "",
+      year: "2024",
+      title: "待补充",
+      authors: "Heting Hong, et al.",
+      venue: "Journal of Materials Research and Technology",
+      doi: "待补充",
       pdf: "",
       link: "",
-      note: "占位条目，请替换为真实论文",
     },
     {
       year: "待补充",
@@ -66,6 +66,32 @@ window.SITE_CONTENT = {
       pdf: "",
       link: "",
       note: "占位条目",
+    },
+  ],
+
+  // —— 学术会议与报告 ——
+  // date / location 留空时页面显示「待补充」
+  // photo 文件尚未放入时，卡片会在图片加载失败后隐藏图像
+  conferences: [
+    {
+      nameZh: "第22届世界腐蚀大会",
+      nameEn: "22nd International Corrosion Congress, ICC",
+      type: "口头报告 · Oral presentation",
+      titleZh: "含铜不锈钢在淡水中的防污机制",
+      titleEn: "Antifouling mechanism of copper-bearing stainless steel in freshwater",
+      summary:
+        "对比 316L 与 316L-Cu 不锈钢表面淡水藻类附着过程，阐明铜离子抑制藻类光合作用、削弱多糖粘附与致密生物膜形成的防污机制。",
+      date: "",
+      location: "",
+      photo: "assets/conferences/icc22-talk.jpg",
+      photoCaption: "",
+      relatedPaper: {
+        authors: "Heting Hong, et al.",
+        title: "待补充",
+        venue: "Journal of Materials Research and Technology",
+        year: "2024",
+        doi: "待补充",
+      },
     },
   ],
 
