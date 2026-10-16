@@ -50,22 +50,12 @@ window.SITE_CONTENT = {
   publications: [
     {
       year: "2024",
-      title: "待补充",
-      authors: "Heting Hong, et al.",
+      title: "Research of Cu-bearing stainless steel with inhibition function of biofouling formation in freshwater environment",
+      authors: "Heting Hong, Jinlong Zhao, Yange Yang, Xuezhi Zhang, Chunguang Yang, Ke Yang, Aijuan Deng",
       venue: "Journal of Materials Research and Technology",
-      doi: "待补充",
+      doi: "10.1016/j.jmrt.2023.12.165",
       pdf: "",
-      link: "",
-    },
-    {
-      year: "待补充",
-      title: "第二篇论文标题（待补充）",
-      authors: "Hong Heting, et al.",
-      venue: "期刊 / 会议名称（待补充）",
-      doi: "",
-      pdf: "",
-      link: "",
-      note: "占位条目",
+      link: "https://doi.org/10.1016/j.jmrt.2023.12.165",
     },
   ],
 
@@ -81,16 +71,16 @@ window.SITE_CONTENT = {
       titleEn: "Antifouling mechanism of copper-bearing stainless steel in freshwater",
       summary:
         "对比 316L 与 316L-Cu 不锈钢表面淡水藻类附着过程，阐明铜离子抑制藻类光合作用、削弱多糖粘附与致密生物膜形成的防污机制。",
-      date: "",
-      location: "",
+      date: "2024年10月22–26日",
+      location: "中国西安",
       photo: "assets/conferences/icc22-talk.jpg",
       photoCaption: "",
       relatedPaper: {
-        authors: "Heting Hong, et al.",
-        title: "待补充",
+        authors: "Heting Hong, Jinlong Zhao, Yange Yang, Xuezhi Zhang, Chunguang Yang, Ke Yang, Aijuan Deng",
+        title: "Research of Cu-bearing stainless steel with inhibition function of biofouling formation in freshwater environment",
         venue: "Journal of Materials Research and Technology",
         year: "2024",
-        doi: "待补充",
+        doi: "10.1016/j.jmrt.2023.12.165",
       },
     },
   ],
@@ -113,7 +103,7 @@ window.SITE_CONTENT = {
     // 待补充：Google Scholar / ORCID / ResearchGate / GitHub 等
     scholar: "",
     orcid: "",
-    github: "",
+    github: "https://github.com/hongheting",
     // 待补充：简历 PDF 路径，例如 "assets/cv.pdf"
     cv: "",
     // 待补充：所在城市或实验室
