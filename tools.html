@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="洪鹤庭的科研助手：文献核对等研究工具。" />
+  <title>科研助手 · 洪鹤庭</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="tools">
+  <a class="skip-link" href="#main">跳到正文</a>
+
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html" id="nav-brand">洪鹤庭</a>
+      <nav aria-label="页面导航">
+        <ul class="nav-links">
+          <li><a href="index.html#about">简介</a></li>
+          <li><a href="index.html#research">研究方向</a></li>
+          <li><a href="index.html#publications">论文</a></li>
+          <li><a href="index.html#conferences">学术会议与报告</a></li>
+          <li><a href="index.html#cv-contact">简历与联系</a></li>
+          <li><a href="tools.html" aria-current="page">科研助手</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="tools" aria-labelledby="tools-title">
+      <h2 class="section-title" id="tools-title">
+        科研助手
+        <span class="en">Research Tools</span>
+      </h2>
+      <div class="tool-grid" id="tool-list">
+        <!-- 由 main.js 根据 content.js 的 tools 填充 -->
+      </div>
+      <p class="tools-note" id="tools-note" hidden></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="footer-year"></span> <span id="footer-name">洪鹤庭</span> · Hong Heting</p>
+    <p id="footer-note"></p>
+  </footer>
+
+  <script src="js/content.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
