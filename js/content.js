@@ -4,6 +4,10 @@
  * 待用户补充的字段已用「待补充」或空字符串标出
  * ============================================================
  */
+
+// 文献核对助手的访问地址。最终地址仍在确认中，确认后只改这一处。
+const REF_CHECKER_URL = "https://ref.jassyhong.top";
+
 window.SITE_CONTENT = {
   // —— 基本信息 ——
   nameZh: "洪鹤庭",
@@ -109,6 +113,20 @@ window.SITE_CONTENT = {
     // 待补充：所在城市或实验室
     location: "武汉 · 华中科技大学",
   },
+
+  // —— 科研助手 ——
+  // 以后新增工具：在 tools 数组追加一项即可。
+  // 字段：name、description、button、url；status 可选，有值时显示为角标。
+  toolsNote: "更多工具陆续上线",
+  tools: [
+    {
+      name: "文献核对助手",
+      description:
+        "逐条核对参考文献：DOI 是否对得上、作者/题名/年份是否写错、是否已撤稿、预印本是否有正式版；给出「原稿→正确」对照和证据链接。支持 Word/PDF/文本，免费试用 50 条。",
+      button: "开始核对",
+      url: REF_CHECKER_URL,
+    },
+  ],
 
   // —— 页脚 ——
   footerNote: "本站点为本地预览版 · 内容待补充完善",

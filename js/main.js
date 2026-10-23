@@ -59,7 +59,12 @@
   text(el("bio-zh"), C.bioZh);
   text(el("bio-en"), C.bioEn);
   text(el("nav-brand"), C.nameZh);
-  document.title = (C.nameZh || "学术主页") + " · " + (C.nameEn || "Academic Homepage");
+  const page = document.body && document.body.dataset.page;
+  if (page === "tools") {
+    document.title = "科研助手 · " + (C.nameZh || "Research Tools");
+  } else {
+    document.title = (C.nameZh || "学术主页") + " · " + (C.nameEn || "Academic Homepage");
+  }
 
   // —— Research ——
   const interestRoot = el("interest-list");
@@ -359,4 +364,57 @@
   text(el("footer-note"), C.footerNote || "");
   const yearEl = el("footer-year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  // —— Research tools ——
+  const toolRoot = el("tool-list");
+  if (toolRoot && Array.isArray(C.tools)) {
+    toolRoot.innerHTML = "";
+    C.tools.forEach(function (tool) {
+      const card = document.createElement("article");
+      card.className = "tool-card";
+
+      const head = document.createElement("div");
+      head.className = "tool-card-head";
+
+      const name = document.createElement("h3");
+      name.textContent = tool.name || "";
+      head.appendChild(name);
+
+      if (tool.status) {
+        const badge = document.createElement("span");
+        badge.className = "tool-badge";
+        badge.textContent = tool.status;
+        head.appendChild(badge);
+      }
+
+      card.appendChild(head);
+
+      const desc = document.createElement("p");
+      desc.className = "tool-desc";
+      desc.textContent = tool.description || "";
+      card.appendChild(desc);
+
+      if (tool.url) {
+        const action = document.createElement("a");
+        action.className = "btn btn-primary";
+        action.href = tool.url;
+        action.target = "_blank";
+        action.rel = "noopener";
+        action.textContent = tool.button || "打开";
+        card.appendChild(action);
+      }
+
+      toolRoot.appendChild(card);
+    });
+  }
+
+  const toolsNote = el("tools-note");
+  if (toolsNote) {
+    if (C.toolsNote) {
+      toolsNote.textContent = C.toolsNote;
+      toolsNote.hidden = false;
+    } else {
+      toolsNote.hidden = true;
+    }
+  }
 })();
