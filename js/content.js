@@ -7,6 +7,8 @@
 
 // 文献核对助手的访问地址。最终地址仍在确认中，确认后只改这一处。
 const REF_CHECKER_URL = "https://ref.jassyhong.top";
+// 实验绘图服务的访问地址。
+const TOOLS_PLOTTER_URL = "https://tools.jassyhong.top/";
 
 window.SITE_CONTENT = {
   // —— 基本信息 ——
@@ -125,6 +127,13 @@ window.SITE_CONTENT = {
         "逐条核对参考文献：DOI 是否对得上、作者/题名/年份是否写错、是否已撤稿、预印本是否有正式版；给出「原稿→正确」对照和证据链接。支持 Word/PDF/文本，免费试用 50 条。",
       button: "开始核对",
       url: REF_CHECKER_URL,
+    },
+    {
+      name: "科研工具 — 电化学 / SEM 一键成图",
+      description:
+        "将电化学（EIS、OCP 等）与 SEM 数据一键生成可投稿图表，可导出 PNG/PDF，并给出拟合参数。",
+      button: "开始出图",
+      url: TOOLS_PLOTTER_URL,
     },
   ],
 
