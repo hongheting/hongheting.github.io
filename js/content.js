@@ -9,6 +9,10 @@
 const REF_CHECKER_URL = "https://ref.jassyhong.top";
 // 实验绘图服务的访问地址。
 const TOOLS_PLOTTER_URL = "https://tools.jassyhong.top/";
+// 期刊筛选助手的访问地址。
+const JOURNAL_ADVISOR_URL = "https://journal.jassyhong.top";
+// 实验方案审查的访问地址。
+const PROTOCOL_AUDIT_URL = "https://protocol.jassyhong.top";
 
 window.SITE_CONTENT = {
   // —— 基本信息 ——
@@ -134,6 +138,20 @@ window.SITE_CONTENT = {
         "将电化学（EIS、OCP 等）与 SEM 数据一键生成可投稿图表，可导出 PNG/PDF，并给出拟合参数。",
       button: "开始出图",
       url: TOOLS_PLOTTER_URL,
+    },
+    {
+      name: "Journal Advisor（期刊筛选助手）",
+      description:
+        "证据驱动的期刊候选短名单：主题匹配、DOI/ISSN 等核验与投稿指引线索；Beta 内部测试，匹配分≠录用概率。",
+      button: "开始筛选",
+      url: JOURNAL_ADVISOR_URL,
+    },
+    {
+      name: "ProtocolAudit（实验方案审查）",
+      description:
+        "上传实验方案（Word/PDF/Markdown），审查假设/分组/对照/终点/统计与常见设计陷阱，给出可改建议；Beta，需访问口令。",
+      button: "开始审查",
+      url: PROTOCOL_AUDIT_URL,
     },
   ],
 
