@@ -156,5 +156,5 @@ window.SITE_CONTENT = {
   ],
 
   // —— 页脚 ——
-  footerNote: "本站点为本地预览版 · 内容待补充完善",
+  footerNote: "科研助手入口 · Journal Advisor / ProtocolAudit / 文献核对 / 出图",
 };
