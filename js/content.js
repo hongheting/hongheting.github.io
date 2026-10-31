@@ -155,6 +155,13 @@ window.SITE_CONTENT = {
       button: "开始审查",
       url: PROTOCOL_AUDIT_URL,
     },
+    {
+      name: "防污配方模拟器",
+      description:
+        "本地优先的防污涂层证据面板：实验室代理表（轨 A）、航线相对污损压力（轨 B）、证据短名单（轨 C），以及公开文献界、商用目录与行业动态。**模拟 ≠ 实测**——每个数值都带诚实标签（实测 / 厂家标称 / 文献界 / 模型估计），绝不把估计写成已测。",
+      button: "打开模拟器",
+      url: COATING_SIMULATOR_URL,
+    },
   ],
 
   // —— 页脚 ——
