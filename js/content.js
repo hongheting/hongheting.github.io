@@ -13,6 +13,8 @@ const TOOLS_PLOTTER_URL = "https://tools.jassyhong.top/";
 const JOURNAL_ADVISOR_URL = "https://journal.jassyhong.top";
 // 实验方案审查的访问地址。
 const PROTOCOL_AUDIT_URL = "https://protocol.jassyhong.top";
+// 防污配方模拟器的访问地址。
+const COATING_SIMULATOR_URL = "https://simulator.jassyhong.top";
 
 window.SITE_CONTENT = {
   // —— 基本信息 ——
@@ -156,5 +158,5 @@ window.SITE_CONTENT = {
   ],
 
   // —— 页脚 ——
-  footerNote: "科研助手入口 · Journal Advisor / ProtocolAudit / 文献核对 / 出图",
+  footerNote: "科研助手入口 · Journal Advisor / ProtocolAudit / 防污配方模拟器 / 文献核对 / 出图",
 };
