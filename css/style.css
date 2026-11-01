@@ -353,6 +353,57 @@ section {
   line-height: 1.45;
   color: var(--muted);
 }
+.talk-photo figcaption[hidden] {
+  display: none;
+}
+
+.talk-media {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
+}
+.talk-media[hidden] {
+  display: none;
+}
+
+.talk-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.4rem 0.45rem 0;
+}
+.talk-gallery[hidden] {
+  display: none;
+}
+.talk-thumb {
+  appearance: none;
+  width: 3.15rem;
+  height: 2.4rem;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--accent-soft);
+  cursor: pointer;
+  line-height: 0;
+}
+.talk-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.talk-thumb.is-active {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+.talk-thumb:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.talk-thumb[hidden] {
+  display: none;
+}
 
 .talk-type {
   display: inline-block;
