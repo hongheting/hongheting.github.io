@@ -45,6 +45,52 @@
     return isPending(value) ? "待补充" : String(value).trim();
   }
 
+  function normalizeTalkPhotos(item) {
+    const list = [];
+    function add(src, caption) {
+      const path = (src || "").trim();
+      if (!path) return;
+      for (let i = 0; i < list.length; i++) {
+        if (list[i].src === path) {
+          if (!list[i].caption && caption) list[i].caption = caption;
+          return;
+        }
+      }
+      list.push({ src: path, caption: caption || "" });
+    }
+    if (Array.isArray(item.photos)) {
+      item.photos.forEach(function (photo) {
+        if (typeof photo === "string") add(photo, "");
+        else if (photo && typeof photo === "object") add(photo.src, photo.caption || "");
+      });
+    }
+    if (item.photo) {
+      let idx = -1;
+      for (let i = 0; i < list.length; i++) {
+        if (list[i].src === item.photo) {
+          idx = i;
+          break;
+        }
+      }
+      const coverCaption = item.photoCaption || "";
+      if (idx === -1) {
+        list.unshift({ src: item.photo, caption: coverCaption });
+      } else {
+        const cover = list.splice(idx, 1)[0];
+        if (!cover.caption && coverCaption) cover.caption = coverCaption;
+        list.unshift(cover);
+      }
+    }
+    return list;
+  }
+
+  function talkAlt(item, photo) {
+    if (photo && photo.caption) return photo.caption;
+    const bits = [item.nameZh || "学术会议"];
+    if (item.type) bits.push(item.type);
+    return bits.join(" ");
+  }
+
   // —— Hero ——
   const avatar = el("avatar");
   if (avatar) {
@@ -164,26 +210,117 @@
     C.conferences.forEach(function (item) {
       const card = document.createElement("article");
       card.className = "talk-card";
+      const photos = normalizeTalkPhotos(item);
 
-      if (item.photo) {
+      if (!photos.length) {
+        card.classList.add("talk-card--no-photo");
+      } else {
+        const media = document.createElement("div");
+        media.className = "talk-media";
+
         const figure = document.createElement("figure");
         figure.className = "talk-photo";
         const img = document.createElement("img");
-        img.src = item.photo;
-        img.alt = item.photoCaption || ((item.nameZh || "学术会议") + (item.type ? " " + item.type : ""));
-        img.addEventListener("error", function () {
-          figure.hidden = true;
-          card.classList.add("talk-card--no-photo");
-        });
+        img.alt = talkAlt(item, photos[0]);
         figure.appendChild(img);
-        if (item.photoCaption) {
-          const cap = document.createElement("figcaption");
-          cap.textContent = item.photoCaption;
-          figure.appendChild(cap);
+
+        const gallery = document.createElement("div");
+        gallery.className = "talk-gallery";
+        gallery.setAttribute("role", "group");
+        gallery.setAttribute("aria-label", (item.nameZh || "会议") + " 现场照片");
+        gallery.hidden = photos.length < 2;
+        figure.appendChild(gallery);
+
+        const cap = document.createElement("figcaption");
+        cap.hidden = !photos[0].caption;
+        cap.textContent = photos[0].caption || "";
+        figure.appendChild(cap);
+        media.appendChild(figure);
+        card.appendChild(media);
+
+        const failed = {};
+        const thumbs = [];
+        let active = 0;
+
+        function availableCount() {
+          let n = 0;
+          for (let i = 0; i < photos.length; i++) if (!failed[i]) n++;
+          return n;
         }
-        card.appendChild(figure);
-      } else {
-        card.classList.add("talk-card--no-photo");
+
+        function firstAvailable() {
+          for (let i = 0; i < photos.length; i++) if (!failed[i]) return i;
+          return -1;
+        }
+
+        function hideAllMedia() {
+          media.hidden = true;
+          card.classList.add("talk-card--no-photo");
+        }
+
+        function syncGallery() {
+          if (media.hidden) return;
+          gallery.hidden = availableCount() < 2;
+        }
+
+        function show(index) {
+          if (failed[index] || !photos[index]) return;
+          active = index;
+          const photo = photos[index];
+          img.alt = talkAlt(item, photo);
+          if (img.getAttribute("src") !== photo.src) img.src = photo.src;
+          cap.hidden = !photo.caption;
+          cap.textContent = photo.caption || "";
+          thumbs.forEach(function (btn, i) {
+            const on = i === index;
+            btn.classList.toggle("is-active", on);
+            btn.setAttribute("aria-pressed", on ? "true" : "false");
+          });
+        }
+
+        function markFailed(index) {
+          if (failed[index]) return;
+          failed[index] = true;
+          if (thumbs[index]) thumbs[index].hidden = true;
+          if (active === index) {
+            const next = firstAvailable();
+            if (next < 0) hideAllMedia();
+            else show(next);
+          }
+          syncGallery();
+        }
+
+        img.addEventListener("error", function () {
+          const src = img.getAttribute("src");
+          for (let i = 0; i < photos.length; i++) {
+            if (photos[i].src === src) {
+              markFailed(i);
+              return;
+            }
+          }
+        });
+
+        photos.forEach(function (photo, i) {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "talk-thumb" + (i === 0 ? " is-active" : "");
+          btn.setAttribute("aria-pressed", i === 0 ? "true" : "false");
+          btn.setAttribute("aria-label", photo.caption || talkAlt(item, photo));
+          const timg = document.createElement("img");
+          timg.alt = "";
+          timg.src = photo.src;
+          timg.addEventListener("error", function () {
+            markFailed(i);
+          });
+          btn.appendChild(timg);
+          btn.addEventListener("click", function () {
+            show(i);
+          });
+          thumbs.push(btn);
+          gallery.appendChild(btn);
+        });
+
+        show(0);
       }
 
       const body = document.createElement("div");
@@ -208,10 +345,12 @@
         body.appendChild(nameEn);
       }
 
-      const title = document.createElement("h3");
-      title.className = "talk-title";
-      title.textContent = item.titleZh || "";
-      body.appendChild(title);
+      if (item.titleZh) {
+        const title = document.createElement("h3");
+        title.className = "talk-title";
+        title.textContent = item.titleZh;
+        body.appendChild(title);
+      }
 
       if (item.titleEn) {
         const titleEn = document.createElement("p");

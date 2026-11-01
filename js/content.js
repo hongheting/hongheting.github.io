@@ -72,21 +72,29 @@ window.SITE_CONTENT = {
   ],
 
   // —— 学术会议与报告 ——
-  // date / location 留空时页面显示「待补充」
-  // photo 文件尚未放入时，卡片会在图片加载失败后隐藏图像
+  // date / location 留空时页面显示「待补充」；未能从照片确认的不要补写
+  // photo：封面（兼容旧字段）；photos：可选图集，项为 {src, caption} 或路径字符串
+  // 仅一张图时只显示封面；两张及以上在封面下显示小图廊
   conferences: [
     {
+      id: "icc22",
       nameZh: "第22届世界腐蚀大会",
-      nameEn: "22nd International Corrosion Congress, ICC",
+      nameEn: "22nd International Corrosion Congress (ICC 2024)",
       type: "口头报告 · Oral presentation",
-      titleZh: "含铜不锈钢在淡水中的防污机制",
-      titleEn: "Antifouling mechanism of copper-bearing stainless steel in freshwater",
+      titleZh: "含铜不锈钢在淡水中的防污性能与机制研究",
+      titleEn: "Research on the Antifouling Performance and Mechanism of Copper-bearing Stainless Steel in Freshwater",
       summary:
         "对比 316L 与 316L-Cu 不锈钢表面淡水藻类附着过程，阐明铜离子抑制藻类光合作用、削弱多糖粘附与致密生物膜形成的防污机制。",
       date: "2024年10月22–26日",
-      location: "中国西安",
-      photo: "assets/conferences/icc22-talk.jpg",
-      photoCaption: "",
+      location: "中国·西安",
+      photo: "assets/conferences/icc22-01.jpg",
+      photoCaption: "口头报告现场，讲台标识第22届世界腐蚀大会",
+      photos: [
+        {
+          src: "assets/conferences/icc22-01.jpg",
+          caption: "口头报告现场，讲台标识第22届世界腐蚀大会",
+        },
+      ],
       relatedPaper: {
         authors: "Heting Hong, Jinlong Zhao, Yange Yang, Xuezhi Zhang, Chunguang Yang, Ke Yang, Aijuan Deng",
         title: "Research of Cu-bearing stainless steel with inhibition function of biofouling formation in freshwater environment",
@@ -94,6 +102,212 @@ window.SITE_CONTENT = {
         year: "2024",
         doi: "10.1016/j.jmrt.2023.12.165",
       },
+    },
+    {
+      id: "icmcf20",
+      nameZh: "第20届国际海洋腐蚀与污损大会",
+      nameEn: "The 20th International Congress on Marine Corrosion and Fouling (ICMCF)",
+      type: "口头报告 · Oral presentation",
+      titleZh: "含铜不锈钢在淡水中的防污性能与机制研究",
+      titleEn: "Research on the Antifouling Performance and Mechanism of Copper-bearing Stainless Steel in Freshwater",
+      date: "2024年",
+      location: "中国·广州",
+      photo: "assets/conferences/icmcf20-01.jpg",
+      photoCaption: "口头报告现场，讲台与幻灯片标注 ICMCF 2024 Guangzhou",
+      photos: [
+        {
+          src: "assets/conferences/icmcf20-01.jpg",
+          caption: "口头报告现场，讲台与幻灯片标注 ICMCF 2024 Guangzhou",
+        },
+      ],
+    },
+    {
+      id: "ifmcf9",
+      nameZh: "2024（第九届）国际海洋防腐与防污论坛",
+      nameEn: "2024 The 9th International Forum on Marine Corrosion and Fouling (IFMCF)",
+      type: "参会",
+      titleZh: "",
+      titleEn: "",
+      date: "2024年4月17–19日",
+      location: "中国·浙江宁波",
+      photo: "assets/conferences/ifmcf9-01.jpg",
+      photoCaption: "主会场舞台合影，背景幕布为论坛名称与日期地点",
+      photos: [
+        {
+          src: "assets/conferences/ifmcf9-01.jpg",
+          caption: "主会场舞台合影，背景幕布为论坛名称与日期地点",
+        },
+      ],
+    },
+    {
+      id: "marine-fouling-6",
+      nameZh: "海洋装备防污防腐材料与技术论坛暨第六届海洋污损防护技术研讨会",
+      nameEn: "Marine Equipment Antifouling and Anticorrosion Materials and Technology Forum & The 6th Marine Biofouling Protection Technology Symposium",
+      type: "口头报告 · Oral presentation",
+      titleZh: "含铜不锈钢对淡水生物污损的影响及防污机制研究",
+      titleEn: "",
+      date: "",
+      location: "",
+      photo: "assets/conferences/marine-fouling-6-01.jpg",
+      photoCaption: "口头报告：含铜不锈钢对淡水生物污损的影响及防污机制研究",
+      photos: [
+        {
+          src: "assets/conferences/marine-fouling-6-01.jpg",
+          caption: "口头报告：含铜不锈钢对淡水生物污损的影响及防污机制研究",
+        },
+      ],
+    },
+    {
+      id: "cmc2022-2023",
+      nameZh: "中国材料大会 2022-2023",
+      nameEn: "Chinese Materials Conference 2022-2023 (CMC 2022-2023)",
+      type: "参会",
+      titleZh: "",
+      titleEn: "",
+      date: "2022–2023年",
+      location: "",
+      photo: "assets/conferences/cmc2022-2023-01.jpg",
+      photoCaption: "讲台旁领取证书，讲台标注 CMC 2022-2023 中国材料大会",
+      photos: [
+        {
+          src: "assets/conferences/cmc2022-2023-01.jpg",
+          caption: "讲台旁领取证书，讲台标注 CMC 2022-2023 中国材料大会",
+        },
+        {
+          src: "assets/conferences/cmc2022-2023-02.jpg",
+          caption: "展区背景板可见 CMC / 中国材料大会 / Chinese Materials Conference",
+        },
+      ],
+    },
+    {
+      id: "icbe-iycbse2023",
+      nameZh: "第七届国际仿生工程大会暨国际仿生科学与工程青年会议",
+      nameEn: "The 7th International Conference of Bionic Engineering & The International Youth Conference of Bionic Science and Engineering 2023 (ICBE & IYCBSE 2023)",
+      type: "参会",
+      titleZh: "",
+      titleEn: "",
+      date: "2023年10月12–15日",
+      location: "中国·武汉",
+      photo: "assets/conferences/icbe-iycbse2023-01.jpg",
+      photoCaption: "主背景幕布合影，含会名、主办方与日期地点",
+      photos: [
+        {
+          src: "assets/conferences/icbe-iycbse2023-01.jpg",
+          caption: "主背景幕布合影，含会名、主办方与日期地点",
+        },
+        {
+          src: "assets/conferences/icbe-iycbse2023-02.jpg",
+          caption: "分会场听会，背景可见 ICBE & IYCBSE 2023",
+        },
+      ],
+    },
+    {
+      id: "polymer2023",
+      nameZh: "2023年全国高分子学术论文报告会",
+      nameEn: "2023 National Polymer Academic Paper Report Conference",
+      type: "参会",
+      titleZh: "",
+      titleEn: "",
+      date: "2023年10月13–17日",
+      location: "中国·湖北武汉",
+      photo: "assets/conferences/polymer2023-01.jpg",
+      photoCaption: "户外主背景板合影",
+      photos: [
+        {
+          src: "assets/conferences/polymer2023-01.jpg",
+          caption: "户外主背景板合影",
+        },
+      ],
+    },
+    {
+      id: "icpi2023",
+      nameZh: "2023国际光化学与工业会议",
+      nameEn: "2023 International Conference on Photochemistry and Industry (ICPI 2023)",
+      type: "参会",
+      titleZh: "",
+      titleEn: "",
+      date: "2023年10月10–13日",
+      location: "中国·武汉",
+      photo: "assets/conferences/icpi2023-01.jpg",
+      photoCaption: "科技成果转化高峰论坛背景板合影",
+      photos: [
+        {
+          src: "assets/conferences/icpi2023-01.jpg",
+          caption: "科技成果转化高峰论坛背景板合影",
+        },
+      ],
+    },
+    {
+      id: "astf5",
+      nameZh: "第五届抗菌科学与技术论坛",
+      nameEn: "ASTF 2023 (5th) Antimicrobial Science and Technology Forum",
+      type: "参会",
+      titleZh: "",
+      titleEn: "",
+      date: "2023年",
+      location: "",
+      photo: "assets/conferences/astf5-01.jpg",
+      photoCaption: "会场交流发言，画面角标 ASTF 2023 第5届",
+      photos: [
+        {
+          src: "assets/conferences/astf5-01.jpg",
+          caption: "会场交流发言，画面角标 ASTF 2023 第5届",
+        },
+      ],
+    },
+    {
+      id: "ieee-nems2021",
+      nameZh: "第16届IEEE国际纳米/微米工程与分子系统会议",
+      nameEn: "The 16th IEEE International Conference on Nano/Micro Engineered and Molecular Systems (IEEE-NEMS 2021)",
+      type: "参会",
+      titleZh: "",
+      titleEn: "",
+      date: "2021年（25–29日，月份不确定）",
+      location: "",
+      photo: "assets/conferences/ieee-nems2021-01.jpg",
+      photoCaption: "舞台与大屏合影，大屏为 IEEE-NEMS 2021",
+      photos: [
+        {
+          src: "assets/conferences/ieee-nems2021-01.jpg",
+          caption: "舞台与大屏合影，大屏为 IEEE-NEMS 2021",
+        },
+      ],
+    },
+    {
+      id: "baidu-agent-summit",
+      nameZh: "超级智能体大会（百度搭子实训营）",
+      nameEn: "Baidu Agent Summit / Super Agent Summit",
+      type: "科技活动",
+      titleZh: "防污技术宣传海报设计（屏幕演示任务名）",
+      titleEn: "",
+      date: "2026年10月29日",
+      location: "",
+      photo: "assets/conferences/baidu-agent-summit-01.jpg",
+      photoCaption: "舞台地标与屏幕可见「超级智能体大会」；任务栏日期 2026/10/29",
+      photos: [
+        {
+          src: "assets/conferences/baidu-agent-summit-01.jpg",
+          caption: "舞台地标与屏幕可见「超级智能体大会」；任务栏日期 2026/10/29",
+        },
+      ],
+    },
+    {
+      id: "grok-bot-meetup",
+      nameZh: "Grok Bot Meetup",
+      nameEn: "Grok Bot Meetup (banner: Presented by SpaceX)",
+      type: "科技活动",
+      titleZh: "防污行业周报（演示内容）",
+      titleEn: "",
+      date: "约2026年10月（屏幕周报区间 2026年9月28日–10月12日）",
+      location: "",
+      photo: "assets/conferences/grok-bot-meetup-01.jpg",
+      photoCaption: "讲台发言，左侧横幅 Welcome / Grok Bot Meetup；屏幕为防污行业周报",
+      photos: [
+        {
+          src: "assets/conferences/grok-bot-meetup-01.jpg",
+          caption: "讲台发言，左侧横幅 Welcome / Grok Bot Meetup；屏幕为防污行业周报",
+        },
+      ],
     },
   ],
 
