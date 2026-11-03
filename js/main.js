@@ -452,6 +452,58 @@
     });
   }
 
+  // —— Awards ——
+  const awardRoot = el("award-list");
+  if (awardRoot && Array.isArray(C.awards)) {
+    awardRoot.innerHTML = "";
+
+    function awardSortKey(date) {
+      const match = String(date || "").match(/(\d{4})\s*年\s*(\d{1,2})\s*月/);
+      if (!match) return 0;
+      return Number(match[1]) * 100 + Number(match[2]);
+    }
+
+    const awards = C.awards
+      .map(function (item, index) {
+        return {
+          nameZh: item && item.nameZh ? String(item.nameZh) : "",
+          date: item && item.date ? String(item.date) : "",
+          index: index,
+        };
+      })
+      .filter(function (item) {
+        return item.nameZh;
+      })
+      .sort(function (a, b) {
+        const diff = awardSortKey(b.date) - awardSortKey(a.date);
+        return diff || a.index - b.index;
+      });
+
+    let group = null;
+    let names = null;
+    awards.forEach(function (item) {
+      if (!group || group.dataset.date !== item.date) {
+        group = document.createElement("li");
+        group.className = "award-group";
+        group.dataset.date = item.date;
+
+        const date = document.createElement("div");
+        date.className = "award-date";
+        date.textContent = item.date;
+        group.appendChild(date);
+
+        names = document.createElement("ul");
+        names.className = "award-names";
+        group.appendChild(names);
+        awardRoot.appendChild(group);
+      }
+
+      const name = document.createElement("li");
+      name.textContent = item.nameZh;
+      names.appendChild(name);
+    });
+  }
+
   // —— Education ——
   const eduRoot = el("edu-list");
   if (eduRoot && Array.isArray(C.education)) {
