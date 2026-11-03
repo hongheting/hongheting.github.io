@@ -616,11 +616,27 @@
   }
   text(el("contact-location"), contact.location || "");
 
+  const phoneLink = el("contact-phone");
+  const phoneItem = el("contact-phone-item");
+  if (phoneLink) {
+    const phone = (contact.phone || "").trim();
+    if (phone) {
+      const tel = phone.replace(/[^\d+]/g, "");
+      phoneLink.href = "tel:" + tel;
+      phoneLink.textContent = phone;
+      if (phoneItem) phoneItem.hidden = false;
+    } else if (phoneItem) {
+      phoneItem.hidden = true;
+    }
+  }
+
   const scholar = el("link-scholar");
+  const researchgate = el("link-researchgate");
   const orcid = el("link-orcid");
   const github = el("link-github");
   const cvBtn = el("link-cv");
   setHref(scholar, contact.scholar, true);
+  setHref(researchgate, contact.researchgate, true);
   setHref(orcid, contact.orcid, true);
   setHref(github, contact.github, true);
   setHref(cvBtn, contact.cv, true);
