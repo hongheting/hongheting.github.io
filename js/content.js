@@ -144,22 +144,152 @@ window.SITE_CONTENT = {
   ],
 
   // —— 专利列表 ——
-  // 据本人简历整理（2026-11-03）
+  // Google Patents 发明人检索「洪鹤庭」，去重后 24 件（2026-11-03）。
+  // date 为授权日，无授权日则用公开日；保持倒序。有 link 时专利号链到中文页。
   patents: [
     {
+      date: "2026-05-12",
+      title: "基于PyQt的光纤分布式声波传感数据可视化处理系统",
+      number: "CN122019895A",
+      link: "https://patents.google.com/patent/CN122019895A/zh",
+    },
+    {
       date: "2025-05-06",
-      title: "A kind of attached biological simulation experimental device for freshwater aquaculture",
+      title: "一种耐磨耐蚀的激光熔覆防污涂层制备装置及方法",
       number: "CN119040872B",
+      link: "https://patents.google.com/patent/CN119040872B/zh",
+    },
+    {
+      date: "2024-12-27",
+      title: "一种模拟海洋环境的材料防污性能快速评估装置及方法",
+      number: "CN119198518A",
+      link: "https://patents.google.com/patent/CN119198518A/zh",
+    },
+    {
+      date: "2024-02-06",
+      title: "一种可漂浮的便携箱式水质检测装置",
+      number: "CN114509552B",
+      link: "https://patents.google.com/patent/CN114509552B/zh",
+    },
+    {
+      date: "2023-12-15",
+      title: "一种三维振动源探测定位方法、系统和计算机可存储介质",
+      number: "CN117232636A",
+      link: "https://patents.google.com/patent/CN117232636A/zh",
+    },
+    {
+      date: "2023-05-23",
+      title: "一种材料静态抗藻能力评估装置",
+      number: "CN219068293U",
+      link: "https://patents.google.com/patent/CN219068293U/zh",
+    },
+    {
+      date: "2023-04-04",
+      title: "一种材料静态抗藻能力评估装置",
+      number: "CN115914843A",
+      link: "https://patents.google.com/patent/CN115914843A/zh",
+    },
+    {
+      date: "2023-01-13",
+      title: "一种生物污损动态模拟实验装置",
+      number: "CN218298173U",
+      link: "https://patents.google.com/patent/CN218298173U/zh",
+    },
+    {
+      date: "2023-01-13",
+      title: "一种生物污损评价实验装置",
+      number: "CN218298041U",
+      link: "https://patents.google.com/patent/CN218298041U/zh",
+    },
+    {
+      date: "2022-11-08",
+      title: "一种传感器探头用多功能协同防污去污装置",
+      number: "CN217766379U",
+      link: "https://patents.google.com/patent/CN217766379U/zh",
+    },
+    {
+      date: "2022-09-30",
+      title: "一种生物污损评价实验装置及方法",
+      number: "CN115128072A",
+      link: "https://patents.google.com/patent/CN115128072A/zh",
+    },
+    {
+      date: "2022-09-16",
+      title: "一种传感器探头用多功能协同防污去污装置",
+      number: "CN115060866A",
+      link: "https://patents.google.com/patent/CN115060866A/zh",
+    },
+    {
+      date: "2022-08-02",
+      title: "基于模块化的水陆空三用空气和水环境监测装置",
+      number: "CN114839333A",
+      link: "https://patents.google.com/patent/CN114839333A/zh",
+    },
+    {
+      date: "2022-07-29",
+      title: "基于模块化的水陆空三用空气和水环境监测装置",
+      number: "CN217084921U",
+      link: "https://patents.google.com/patent/CN217084921U/zh",
     },
     {
       date: "2022-06-28",
-      title: "A kind of attached biological simulation experimental device for freshwater aquaculture",
+      title: "一种淡水养殖用附着生物模拟实验装置",
       number: "CN216821334U",
+      link: "https://patents.google.com/patent/CN216821334U/zh",
+    },
+    {
+      date: "2022-06-14",
+      title: "一种鱼缸用上置式自清洗杀菌循环过滤装置",
+      number: "CN216722746U",
+      link: "https://patents.google.com/patent/CN216722746U/zh",
+    },
+    {
+      date: "2020-06-26",
+      title: "一种新型空气净化加湿器",
+      number: "CN210861468U",
+      link: "https://patents.google.com/patent/CN210861468U/zh",
+    },
+    {
+      date: "2020-05-08",
+      title: "机械回力圆规",
+      number: "CN210478226U",
+      link: "https://patents.google.com/patent/CN210478226U/zh",
+    },
+    {
+      date: "2020-04-17",
+      title: "一种节能型冷式空气蒸发加湿器",
+      number: "CN210345754U",
+      link: "https://patents.google.com/patent/CN210345754U/zh",
     },
     {
       date: "2019-12-31",
-      title: "Air purification humidifier",
+      title: "空气净化加湿器",
       number: "CN305525052S",
+      link: "https://patents.google.com/patent/CN305525052S/zh",
+    },
+    {
+      date: "2019-12-27",
+      title: "一种自给水式除湿净化一体清洁装置",
+      number: "CN110613403A",
+      link: "https://patents.google.com/patent/CN110613403A/zh",
+    },
+    {
+      date: "2019-11-26",
+      title: "加湿器",
+      number: "CN305460744S",
+      link: "https://patents.google.com/patent/CN305460744S/zh",
+    },
+    {
+      date: "2016-04-20",
+      title: "一种座椅",
+      number: "CN105496050A",
+      link: "https://patents.google.com/patent/CN105496050A/zh",
+    },
+    {
+      date: "2014-05-07",
+      title: "一种多功能座椅",
+      number: "CN203576054U",
+      link: "https://patents.google.com/patent/CN203576054U/zh",
     },
   ],
 
@@ -468,8 +598,8 @@ window.SITE_CONTENT = {
   contact: {
     // 本人提供的联系邮箱（2026-11-03）
     email: "jassy.hong@gmail.com",
-    // Google Scholar / ORCID 暂未提供，留空时页面不显示对应按钮
-    scholar: "",
+    // 本人提供的 Google Scholar（2026-11-03）；ORCID 未提供，留空时不显示按钮
+    scholar: "https://scholar.google.com/citations?user=LtcmU_gAAAAJ&hl=en",
     orcid: "",
     github: "https://github.com/hongheting",
     // 简历 PDF（本人 2026-11-03 提供）

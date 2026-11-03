@@ -222,7 +222,22 @@
 
       const meta = document.createElement("p");
       meta.className = "authors";
-      meta.textContent = ["中国专利", p.number, p.date].filter(Boolean).join(" · ");
+      meta.appendChild(document.createTextNode("中国专利"));
+      if (p.number) {
+        meta.appendChild(document.createTextNode(" · "));
+        const link = typeof p.link === "string" ? p.link.trim() : "";
+        if (/^https?:\/\//i.test(link)) {
+          const a = document.createElement("a");
+          a.href = link;
+          a.target = "_blank";
+          a.rel = "noopener noreferrer";
+          a.textContent = p.number;
+          meta.appendChild(a);
+        } else {
+          meta.appendChild(document.createTextNode(p.number));
+        }
+      }
+      if (p.date) meta.appendChild(document.createTextNode(" · " + p.date));
       li.appendChild(meta);
 
       patentRoot.appendChild(li);
