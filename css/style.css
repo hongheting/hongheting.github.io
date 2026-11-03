@@ -517,6 +517,75 @@ section {
   color: var(--muted);
 }
 
+/* Awards */
+.award-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.award-group {
+  display: grid;
+  grid-template-columns: 7.25rem 1fr;
+  gap: 0.25rem 1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.award-group:last-child {
+  border-bottom: none;
+}
+.award-date {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+  font-weight: 600;
+  padding-top: 0.12rem;
+}
+.award-names {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.award-names li {
+  margin: 0;
+  padding: 0.12rem 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+/* Certificates & languages */
+.subsection-title {
+  margin: 1.35rem 0 0.15rem;
+  font-size: 0.98rem;
+  font-weight: 650;
+  line-height: 1.4;
+}
+.subsection-title:first-of-type {
+  margin-top: 0;
+}
+.credential-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.credential-item {
+  padding: 0.72rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+.credential-item:last-child {
+  border-bottom: none;
+}
+.credential-issuer,
+.credential-sep {
+  color: var(--muted);
+}
+.credential-name,
+.credential-detail {
+  font-weight: 600;
+}
+
 /* Contact */
 .contact-card {
   background: var(--surface);
@@ -584,6 +653,9 @@ section {
 .btn.is-disabled {
   opacity: 0.45;
   pointer-events: none;
+}
+.btn[hidden] {
+  display: none;
 }
 
 /* Research tools */
@@ -675,7 +747,8 @@ section {
     gap: 0.2rem 0.65rem;
     justify-content: flex-end;
   }
-  .edu-item {
+  .edu-item,
+  .award-group {
     grid-template-columns: 1fr;
   }
   .talk-card {

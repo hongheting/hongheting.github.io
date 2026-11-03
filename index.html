@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="洪鹤庭 Hong Heting — 华中科技大学环境工程博士研究生学术主页" />
+  <meta name="description" content="洪鹤庭 Hong Heting — 华中科技大学环境科学与工程学院研究助理学术主页" />
   <title>洪鹤庭 · Hong Heting</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -19,7 +19,10 @@
           <li><a href="#about">简介</a></li>
           <li><a href="#research">研究方向</a></li>
           <li><a href="#publications">论文</a></li>
+          <li><a href="#patents">专利</a></li>
           <li><a href="#conferences">学术会议与报告</a></li>
+          <li><a href="#awards">获奖</a></li>
+          <li><a href="#credentials">证书与语言</a></li>
           <li><a href="#cv-contact">简历与联系</a></li>
           <li><a href="tools.html">科研助手</a></li>
         </ul>
@@ -32,19 +35,16 @@
     <!-- 文案来自 js/content.js，改 content.js 即可，一般不必改 HTML -->
     <section class="hero" id="top" aria-labelledby="name-zh">
       <div class="avatar-wrap">
-        <img id="avatar" src="assets/avatar-placeholder.svg" alt="头像" width="112" height="112" />
+        <img id="avatar" src="assets/avatar-monogram.svg" alt="头像" width="112" height="112" />
       </div>
       <div class="hero-text" id="about">
         <h1 id="name-zh">洪鹤庭</h1>
         <p class="name-en" id="name-en">Hong Heting</p>
-        <p class="title" id="title-zh">华中科技大学 · 环境工程博士研究生</p>
+        <p class="title" id="title-zh">华中科技大学 · 环境科学与工程学院 研究助理</p>
         <p class="title-en" id="title-en"></p>
         <div class="tagline" id="tagline"></div>
         <p class="bio" id="bio-zh"></p>
         <p class="bio bio-en" id="bio-en"></p>
-        <p class="placeholder-hint">
-          ※ 头像、简介细节待用户补充 — 修改 <code>js/content.js</code> 中的 <code>avatar</code>、<code>bioZh</code>
-        </p>
       </div>
     </section>
 
@@ -66,11 +66,19 @@
         <span class="en">Publications</span>
       </h2>
       <ul class="pub-list" id="pub-list">
-        <!-- 由 main.js 根据 content.js 填充；请在 content.js 的 publications 数组替换占位条目 -->
+        <!-- 由 main.js 根据 content.js 的 publications 数组填充 -->
       </ul>
-      <p class="placeholder-hint">
-        ※ 已列入 Journal of Materials Research and Technology, 2024，题名与 DOI 仍为待补充；其余条目为占位 — 在 <code>js/content.js</code> 的 <code>publications</code> 中填写
-      </p>
+    </section>
+
+    <!-- ========== 专利 ========== -->
+    <section id="patents" aria-labelledby="patent-title">
+      <h2 class="section-title" id="patent-title">
+        专利
+        <span class="en">Patents</span>
+      </h2>
+      <ul class="pub-list" id="patent-list">
+        <!-- 由 main.js 根据 content.js 的 patents 数组填充 -->
+      </ul>
     </section>
 
     <!-- ========== 学术会议与报告 ========== -->
@@ -82,9 +90,6 @@
       <div class="talk-list" id="talk-list">
         <!-- 由 main.js 根据 content.js 的 conferences 填充 -->
       </div>
-      <p class="placeholder-hint">
-        ※ 照片中未能确认的日期或地点留空，页面显示「待补充」。同一会议有多张照片时，可点封面下的小图切换。
-      </p>
     </section>
 
     <!-- ========== 教育背景 ========== -->
@@ -94,9 +99,33 @@
         <span class="en">Education</span>
       </h2>
       <ul class="edu-list" id="edu-list"></ul>
-      <p class="placeholder-hint">
-        ※ 可在 <code>js/content.js</code> 的 <code>education</code> 中补充本科/硕士经历
-      </p>
+    </section>
+
+    <!-- ========== 获奖 ========== -->
+    <section id="awards" aria-labelledby="award-title">
+      <h2 class="section-title" id="award-title">
+        获奖
+        <span class="en">Honors &amp; Awards</span>
+      </h2>
+      <ul class="award-list" id="award-list">
+        <!-- 由 main.js 根据 content.js 的 awards 数组填充 -->
+      </ul>
+    </section>
+
+    <!-- ========== 证书与语言 ========== -->
+    <section id="credentials" aria-labelledby="credentials-title">
+      <h2 class="section-title" id="credentials-title">
+        证书与语言
+        <span class="en">Certificates &amp; Languages</span>
+      </h2>
+      <h3 class="subsection-title" id="certs-title">技能证书</h3>
+      <ul class="credential-list" id="certificate-list">
+        <!-- 由 main.js 根据 content.js 的 certificates 填充 -->
+      </ul>
+      <h3 class="subsection-title" id="english-title">英语能力</h3>
+      <ul class="credential-list" id="english-list">
+        <!-- 由 main.js 根据 content.js 的 english 填充 -->
+      </ul>
     </section>
 
     <!-- ========== 简历与联系 ========== -->
@@ -109,7 +138,7 @@
         <ul class="contact-list">
           <li>
             <span class="contact-label">邮箱</span>
-            <a id="contact-email" href="#">your.email@example.com</a>
+            <a id="contact-email" href="mailto:jassy.hong@gmail.com">jassy.hong@gmail.com</a>
           </li>
           <li>
             <span class="contact-label">地点</span>
@@ -122,7 +151,6 @@
           <a class="btn is-disabled" id="link-orcid" href="#" aria-disabled="true" target="_blank" rel="noopener noreferrer">ORCID</a>
           <a class="btn is-disabled" id="link-github" href="#" aria-disabled="true" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
-        <p class="placeholder-hint" id="contact-hint" hidden></p>
       </div>
     </section>
   </main>
@@ -133,7 +161,7 @@
   </footer>
 
   <!-- 先加载内容配置，再渲染 -->
-  <script src="js/content.js?v=20261101a"></script>
-  <script src="js/main.js?v=20261101a"></script>
+  <script src="js/content.js?v=20261103d"></script>
+  <script src="js/main.js?v=20261103d"></script>
 </body>
 </html>

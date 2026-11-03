@@ -1,0 +1,60 @@
+jassyhong.top site package for Monica
+source: https://github.com/hongheting/hongheting.github.io (main)
+generated: 2026-11-03 15:24:15 CST
+
+=== File listing (directory structure) ===
+ASSETS-FILE-LIST.txt
+CNAME
+README.md
+assets/avatar-placeholder.svg
+assets/conferences/.gitkeep
+assets/conferences/astf5-01.jpg
+assets/conferences/baidu-agent-summit-01.jpg
+assets/conferences/cmc2022-2023-01.jpg
+assets/conferences/cmc2022-2023-02.jpg
+assets/conferences/grok-bot-meetup-01.jpg
+assets/conferences/icbe-iycbse2023-01.jpg
+assets/conferences/icbe-iycbse2023-02.jpg
+assets/conferences/icc22-01.jpg
+assets/conferences/icmcf20-01.jpg
+assets/conferences/icpi2023-01.jpg
+assets/conferences/ieee-nems2021-01.jpg
+assets/conferences/ifmcf9-01.jpg
+assets/conferences/marine-fouling-6-01.jpg
+assets/conferences/polymer2023-01.jpg
+css/style.css
+index.html
+js/content.js
+js/main.js
+tools.html
+
+=== Directory tree ===
+.
+ASSETS-FILE-LIST.txt
+CNAME
+README.md
+assets
+assets/avatar-placeholder.svg
+assets/conferences
+assets/conferences/.gitkeep
+assets/conferences/astf5-01.jpg
+assets/conferences/baidu-agent-summit-01.jpg
+assets/conferences/cmc2022-2023-01.jpg
+assets/conferences/cmc2022-2023-02.jpg
+assets/conferences/grok-bot-meetup-01.jpg
+assets/conferences/icbe-iycbse2023-01.jpg
+assets/conferences/icbe-iycbse2023-02.jpg
+assets/conferences/icc22-01.jpg
+assets/conferences/icmcf20-01.jpg
+assets/conferences/icpi2023-01.jpg
+assets/conferences/ieee-nems2021-01.jpg
+assets/conferences/ifmcf9-01.jpg
+assets/conferences/marine-fouling-6-01.jpg
+assets/conferences/polymer2023-01.jpg
+css
+css/style.css
+index.html
+js
+js/content.js
+js/main.js
+tools.html
