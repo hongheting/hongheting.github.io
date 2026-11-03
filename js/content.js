@@ -20,15 +20,14 @@ window.SITE_CONTENT = {
   // —— 基本信息 ——
   nameZh: "洪鹤庭",
   nameEn: "Hong Heting",
-  titleZh: "华中科技大学 · 环境科学与工程学院 研究助理",
-  titleEn: "Research Assistant, School of Environmental Science and Engineering, Huazhong University of Science and Technology",
-  // 暂无个人照片时使用姓名首字母头像；有照片后把照片放进 assets/ 并改这里
-  avatar: "assets/avatar-monogram.svg",
+  titleZh: "华中科技大学 · 环境科学与工程学院 博士研究生",
+  titleEn: "Ph.D. Student, School of Environmental Science and Engineering, Huazhong University of Science and Technology",
+  avatar: "assets/avatar.jpg",
   // 个人简介（中文为主，可附一句英文）
   bioZh:
-    "我是洪鹤庭，目前在华中科技大学环境科学与工程学院担任研究助理。研究聚焦生物污损与防污技术，关注多水域场景下的污损防治，以及功能涂层与物理协同手段（如 UV-C、超声）的结合应用。",
+    "我是洪鹤庭，目前在华中科技大学环境科学与工程学院攻读博士学位。研究聚焦生物污损与防污技术，关注多水域场景下的污损防治，以及功能涂层与物理协同手段（如 UV-C、超声）的结合应用。",
   bioEn:
-    "Research Assistant at the School of Environmental Science and Engineering, Huazhong University of Science and Technology, working on marine/aquatic biofouling and antifouling strategies, including gradient functional coatings and UV-C / ultrasound synergistic approaches.",
+    "Ph.D. student at the School of Environmental Science and Engineering, Huazhong University of Science and Technology, working on marine/aquatic biofouling and antifouling strategies, including gradient functional coatings and UV-C / ultrasound synergistic approaches.",
   // 一句话 slogan
   tagline: "生物污损 · 防污涂层 · 多水域应用",
 
@@ -53,6 +52,11 @@ window.SITE_CONTENT = {
       titleZh: "UV-C / 超声协同",
       titleEn: "UV-C & Ultrasound Synergy",
       descZh: "结合紫外（UV-C）与超声等物理手段，研究其与功能涂层协同防污的效果与工程应用可行性。",
+    },
+    {
+      titleZh: "增材制造",
+      titleEn: "Additive Manufacturing",
+      descZh: "结合激光增材制造制备功能涂层，用于防污与材料表面防护，关注成形方式与涂层抗污表现之间的关系。",
     },
   ],
 
@@ -144,15 +148,11 @@ window.SITE_CONTENT = {
   ],
 
   // —— 专利列表 ——
-  // Google Patents 发明人检索「洪鹤庭」，去重后 24 件（2026-11-03）。
+  // Google Patents 发明人检索「洪鹤庭」去重后列入（2026-11-03）。
+  // 本人确认下列四件并非本人专利，已删除且不再列入：
+  // CN122019895A、CN117232636A、CN105496050A、CN203576054U。
   // date 为授权日，无授权日则用公开日；保持倒序。有 link 时专利号链到中文页。
   patents: [
-    {
-      date: "2026-05-12",
-      title: "基于PyQt的光纤分布式声波传感数据可视化处理系统",
-      number: "CN122019895A",
-      link: "https://patents.google.com/patent/CN122019895A/zh",
-    },
     {
       date: "2025-05-06",
       title: "一种耐磨耐蚀的激光熔覆防污涂层制备装置及方法",
@@ -170,12 +170,6 @@ window.SITE_CONTENT = {
       title: "一种可漂浮的便携箱式水质检测装置",
       number: "CN114509552B",
       link: "https://patents.google.com/patent/CN114509552B/zh",
-    },
-    {
-      date: "2023-12-15",
-      title: "一种三维振动源探测定位方法、系统和计算机可存储介质",
-      number: "CN117232636A",
-      link: "https://patents.google.com/patent/CN117232636A/zh",
     },
     {
       date: "2023-05-23",
@@ -278,18 +272,6 @@ window.SITE_CONTENT = {
       title: "加湿器",
       number: "CN305460744S",
       link: "https://patents.google.com/patent/CN305460744S/zh",
-    },
-    {
-      date: "2016-04-20",
-      title: "一种座椅",
-      number: "CN105496050A",
-      link: "https://patents.google.com/patent/CN105496050A/zh",
-    },
-    {
-      date: "2014-05-07",
-      title: "一种多功能座椅",
-      number: "CN203576054U",
-      link: "https://patents.google.com/patent/CN203576054U/zh",
     },
   ],
 
@@ -538,7 +520,7 @@ window.SITE_CONTENT = {
   education: [
     {
       period: "2024年至今",
-      degree: "研究助理 · 环境科学与工程学院",
+      degree: "博士研究生 · 环境科学与工程学院",
       school: "华中科技大学",
       schoolEn: "Huazhong University of Science and Technology (HUST)",
     },
@@ -598,8 +580,10 @@ window.SITE_CONTENT = {
   contact: {
     // 本人提供的联系邮箱（2026-11-03）
     email: "jassy.hong@gmail.com",
+    phone: "+86 17607144929",
     // 本人提供的 Google Scholar（2026-11-03）；ORCID 未提供，留空时不显示按钮
     scholar: "https://scholar.google.com/citations?user=LtcmU_gAAAAJ&hl=en",
+    researchgate: "https://www.researchgate.net/profile/Heting-Hong-2",
     orcid: "",
     github: "https://github.com/hongheting",
     // 简历 PDF（本人 2026-11-03 提供）
