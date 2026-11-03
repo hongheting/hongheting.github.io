@@ -20,9 +20,12 @@
     if (!node) return;
     if (url) {
       node.href = url;
+      node.hidden = false;
       node.removeAttribute("aria-disabled");
       node.classList.remove("is-disabled");
     } else if (fallbackDisabled) {
+      // 没有链接时直接隐藏按钮，不再显示灰色不可用按钮
+      node.hidden = true;
       node.href = "#";
       node.setAttribute("aria-disabled", "true");
       node.classList.add("is-disabled");
@@ -39,10 +42,6 @@
   function isPending(value) {
     const v = (value || "").trim();
     return !v || v === "待补充";
-  }
-
-  function pendingText(value) {
-    return isPending(value) ? "待补充" : String(value).trim();
   }
 
   function normalizeTalkPhotos(item) {
@@ -95,7 +94,7 @@
   const avatar = el("avatar");
   if (avatar) {
     avatar.src = C.avatar || "assets/avatar-placeholder.svg";
-    avatar.alt = (C.nameZh || "") + " 照片";
+    avatar.alt = (C.nameZh || "") + " 头像";
   }
   text(el("name-zh"), C.nameZh);
   text(el("name-en"), C.nameEn);
@@ -200,6 +199,33 @@
       }
 
       pubRoot.appendChild(li);
+    });
+  }
+
+  // —— Patents ——
+  const patentRoot = el("patent-list");
+  if (patentRoot && Array.isArray(C.patents)) {
+    patentRoot.innerHTML = "";
+    C.patents.forEach(function (p) {
+      const li = document.createElement("li");
+      li.className = "pub-item";
+
+      const year = document.createElement("div");
+      year.className = "year";
+      year.textContent = (p.date || "").slice(0, 4);
+      li.appendChild(year);
+
+      const title = document.createElement("p");
+      title.className = "pub-title";
+      title.textContent = p.title || "";
+      li.appendChild(title);
+
+      const meta = document.createElement("p");
+      meta.className = "authors";
+      meta.textContent = ["中国专利", p.number, p.date].filter(Boolean).join(" · ");
+      li.appendChild(meta);
+
+      patentRoot.appendChild(li);
     });
   }
 
@@ -372,17 +398,18 @@
         ["日期", item.date],
         ["地点", item.location],
       ].forEach(function (pair) {
+        // 日期/地点为空时不显示该行，不再显示「待补充」
+        if (isPending(pair[1])) return;
         const row = document.createElement("div");
         const dt = document.createElement("dt");
         dt.textContent = pair[0];
         const dd = document.createElement("dd");
-        dd.textContent = pendingText(pair[1]);
-        if (isPending(pair[1])) dd.className = "is-pending";
+        dd.textContent = String(pair[1]).trim();
         row.appendChild(dt);
         row.appendChild(dd);
         facts.appendChild(row);
       });
-      body.appendChild(facts);
+      if (facts.childNodes.length) body.appendChild(facts);
 
       if (item.relatedPaper) {
         const related = document.createElement("p");
@@ -407,15 +434,7 @@
           cite.textContent = bits.join(", ");
           related.appendChild(cite);
 
-          const pendingBits = [];
-          if (isPending(rel.title)) pendingBits.push("题名");
-          if (isPending(rel.doi)) pendingBits.push("DOI");
-          if (pendingBits.length) {
-            const pending = document.createElement("span");
-            pending.className = "is-pending";
-            pending.textContent = pendingBits.join("、") + "：待补充";
-            related.appendChild(pending);
-          } else if (isLinkableDoi(rel.doi)) {
+          if (isLinkableDoi(rel.doi)) {
             const doiLink = document.createElement("a");
             const doi = rel.doi.trim();
             doiLink.href = /^https?:\/\//i.test(doi) ? doi : "https://doi.org/" + doi;
@@ -483,22 +502,7 @@
   setHref(github, contact.github, true);
   setHref(cvBtn, contact.cv, true);
 
-  // 隐藏空链接按钮旁提示
-  const hint = el("contact-hint");
-  if (hint) {
-    const missing = [];
-    if (!contact.email || contact.email === "your.email@example.com") missing.push("邮箱");
-    if (!contact.cv) missing.push("简历 PDF");
-    if (!contact.scholar) missing.push("Google Scholar");
-    if (!contact.orcid) missing.push("ORCID");
-    if (!contact.github) missing.push("GitHub");
-    if (missing.length) {
-      hint.textContent = "待补充：" + missing.join("、") + " —— 请在 js/content.js 的 contact 中填写。";
-      hint.hidden = false;
-    } else {
-      hint.hidden = true;
-    }
-  }
+  // 联系区不再生成「待补充」提示；没有链接的按钮已由 setHref 隐藏
 
   text(el("footer-note"), C.footerNote || "");
   const yearEl = el("footer-year");
