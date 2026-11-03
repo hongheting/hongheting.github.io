@@ -504,6 +504,62 @@
     });
   }
 
+  // —— Certificates & English ——
+  function appendCredential(root, item) {
+    const issuer = item && item.issuer ? String(item.issuer) : "";
+    const name = item && item.name ? String(item.name) : "";
+    const detail = item && item.detail ? String(item.detail) : "";
+    if (!issuer && !name) return;
+
+    const li = document.createElement("li");
+    li.className = "credential-item";
+
+    if (issuer) {
+      const org = document.createElement("span");
+      org.className = "credential-issuer";
+      org.textContent = issuer;
+      li.appendChild(org);
+      const sep = document.createElement("span");
+      sep.className = "credential-sep";
+      sep.textContent = "——";
+      li.appendChild(sep);
+    }
+
+    const title = document.createElement("span");
+    title.className = "credential-name";
+    title.textContent = name;
+    li.appendChild(title);
+
+    if (detail) {
+      const sep = document.createElement("span");
+      sep.className = "credential-sep";
+      sep.textContent = "——";
+      li.appendChild(sep);
+      const score = document.createElement("span");
+      score.className = "credential-detail";
+      score.textContent = detail;
+      li.appendChild(score);
+    }
+
+    root.appendChild(li);
+  }
+
+  const certificateRoot = el("certificate-list");
+  if (certificateRoot && Array.isArray(C.certificates)) {
+    certificateRoot.innerHTML = "";
+    C.certificates.forEach(function (item) {
+      appendCredential(certificateRoot, item);
+    });
+  }
+
+  const englishRoot = el("english-list");
+  if (englishRoot && Array.isArray(C.english)) {
+    englishRoot.innerHTML = "";
+    C.english.forEach(function (item) {
+      appendCredential(englishRoot, item);
+    });
+  }
+
   // —— Education ——
   const eduRoot = el("edu-list");
   if (eduRoot && Array.isArray(C.education)) {

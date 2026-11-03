@@ -448,6 +448,22 @@ window.SITE_CONTENT = {
     { nameZh: "HILIP's Golden Ears Passed", date: "2017年10月" },
   ],
 
+  // —— 技能证书与英语 ——
+  // 只收录提供的原文，不补分数、等级或未列出的证书。
+  certificates: [
+    { issuer: "全国计算机等级考试", name: "二级 Python" },
+    { issuer: "全国三维数字化技术应用能力认证", name: "3Dv6" },
+    { issuer: "阿里云认证", name: "阿里云 Apsara Clouder 云安全专项技能认证" },
+    { issuer: "全国标准化考试联盟认证", name: "机械 CAD 设计工程师高级" },
+    { issuer: "中华人民共和国职业资格证书", name: "车工" },
+    { issuer: "Dassault Systems", name: "Professional in Mechanical Design" },
+  ],
+  english: [
+    { name: "全国大学英语四级考试", detail: "总分：509，口语：B" },
+    { name: "全国大学英语六级考试", detail: "总分：504，口语：B" },
+    { name: "IELTS 6.5" },
+  ],
+
   // —— 联系与简历 ——
   contact: {
     // 本人提供的联系邮箱（2026-11-03）
