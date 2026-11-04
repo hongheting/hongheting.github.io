@@ -54,6 +54,39 @@ window.SITE_CONTENT = {
     },
   ],
 
+  // —— Funded projects ——
+  // Provided by the author (2026-11-04). Titles translated from the Chinese originals.
+  projects: {
+    hosted: [
+      {
+        title: "Key Technologies for Meteorological Disaster Early Warning and Forecasting for Major Aquatic Products in Hubei Province",
+        program: "Key Fund Project of the Hubei Provincial Meteorological Bureau",
+        grant: "2022Z03",
+        funding: "CNY 600,000",
+      },
+    ],
+    participated: [
+      {
+        title: "Failure Mechanisms and Models of Instruments under Harsh Environmental Conditions",
+        program: "National Key R&D Program of China",
+        grant: "2018YFB2003601",
+        funding: "",
+      },
+      {
+        title: "Development of Anticorrosive Coatings with Excellent Recoating Performance",
+        program: "National Key R&D Program of China",
+        grant: "2019YFC0312103",
+        funding: "",
+      },
+      {
+        title: "Key Technologies for Multi-Interface Synergistic Treatment and Ecological Restoration of Lake Water Pollution",
+        program: "Key R&D Program of Hubei Province",
+        grant: "2026BCB064",
+        funding: "",
+      },
+    ],
+  },
+
   // —— Publications ——
   // Fields: year, title, authors, venue, doi, pdf, link.
   // Compiled from the author's CV (2026-11-03); DOIs not given in the CV are not guessed.

@@ -127,6 +127,34 @@
     });
   }
 
+  // —— Projects ——
+  function renderProjects(rootId, list) {
+    const root = el(rootId);
+    if (!root || !Array.isArray(list)) return;
+    root.innerHTML = "";
+    list.forEach(function (p) {
+      const li = document.createElement("li");
+      li.className = "pub-item";
+      const title = document.createElement("p");
+      title.className = "pub-title";
+      title.textContent = p.title || "";
+      li.appendChild(title);
+      const meta = document.createElement("p");
+      meta.className = "authors";
+      const bits = [];
+      if (p.program) bits.push(p.program);
+      if (p.grant) bits.push("Grant No. " + p.grant);
+      if (p.funding) bits.push("Funding: " + p.funding);
+      meta.textContent = bits.join(" · ");
+      li.appendChild(meta);
+      root.appendChild(li);
+    });
+  }
+  if (C.projects) {
+    renderProjects("project-hosted-list", C.projects.hosted);
+    renderProjects("project-participated-list", C.projects.participated);
+  }
+
   // —— Publications ——
   const pubRoot = el("pub-list");
   if (pubRoot && Array.isArray(C.publications)) {
