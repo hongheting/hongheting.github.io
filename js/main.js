@@ -4,7 +4,7 @@
 (function () {
   const C = window.SITE_CONTENT;
   if (!C) {
-    console.error("SITE_CONTENT 未加载，请检查 js/content.js");
+    console.error("SITE_CONTENT not loaded; check js/content.js");
     return;
   }
 
@@ -35,13 +35,13 @@
   function isLinkableDoi(value) {
     if (!value || typeof value !== "string") return false;
     const v = value.trim();
-    if (!v || v === "待补充") return false;
+    if (!v || v === "待补充" || v === "TBD") return false;
     return /^https?:\/\//i.test(v) || /^10\.\d{4,}\//.test(v);
   }
 
   function isPending(value) {
     const v = (value || "").trim();
-    return !v || v === "待补充";
+    return !v || v === "待补充" || v === "TBD";
   }
 
   function normalizeTalkPhotos(item) {
@@ -85,7 +85,7 @@
 
   function talkAlt(item, photo) {
     if (photo && photo.caption) return photo.caption;
-    const bits = [item.nameZh || "学术会议"];
+    const bits = [item.nameZh || "Conference"];
     if (item.type) bits.push(item.type);
     return bits.join(" ");
   }
@@ -94,7 +94,7 @@
   const avatar = el("avatar");
   if (avatar) {
     avatar.src = C.avatar || "assets/avatar-placeholder.svg";
-    avatar.alt = (C.nameZh || "") + " 头像";
+    avatar.alt = C.nameZh || "Hong Heting";
   }
   text(el("name-zh"), C.nameZh);
   text(el("name-en"), C.nameEn);
@@ -106,9 +106,9 @@
   text(el("nav-brand"), C.nameZh);
   const page = document.body && document.body.dataset.page;
   if (page === "tools") {
-    document.title = "科研助手 · " + (C.nameZh || "Research Tools");
+    document.title = "Research Tools · " + (C.nameZh || "Hong Heting");
   } else {
-    document.title = (C.nameZh || "学术主页") + " · " + (C.nameEn || "Academic Homepage");
+    document.title = (C.nameZh || "Hong Heting") + " · Academic Homepage";
   }
 
   // —— Research ——
@@ -169,7 +169,7 @@
         } else {
           const span = document.createElement("span");
           span.className = "is-pending";
-          span.textContent = "DOI：" + p.doi.trim();
+          span.textContent = "DOI: " + p.doi.trim();
           links.appendChild(span);
         }
       }
@@ -186,7 +186,7 @@
         a.href = p.link;
         a.target = "_blank";
         a.rel = "noopener noreferrer";
-        a.textContent = "链接";
+        a.textContent = "Link";
         links.appendChild(a);
       }
       if (links.childNodes.length) li.appendChild(links);
@@ -222,7 +222,7 @@
 
       const meta = document.createElement("p");
       meta.className = "authors";
-      meta.appendChild(document.createTextNode("中国专利"));
+      meta.appendChild(document.createTextNode("Chinese patent"));
       if (p.number) {
         meta.appendChild(document.createTextNode(" · "));
         const link = typeof p.link === "string" ? p.link.trim() : "";
@@ -268,7 +268,7 @@
         const gallery = document.createElement("div");
         gallery.className = "talk-gallery";
         gallery.setAttribute("role", "group");
-        gallery.setAttribute("aria-label", (item.nameZh || "会议") + " 现场照片");
+        gallery.setAttribute("aria-label", (item.nameZh || "Conference") + " photos");
         gallery.hidden = photos.length < 2;
         figure.appendChild(gallery);
 
@@ -410,8 +410,8 @@
       const facts = document.createElement("dl");
       facts.className = "talk-facts";
       [
-        ["日期", item.date],
-        ["地点", item.location],
+        ["Date", item.date],
+        ["Location", item.location],
       ].forEach(function (pair) {
         // 日期/地点为空时不显示该行，不再显示「待补充」
         if (isPending(pair[1])) return;
@@ -431,7 +431,7 @@
         related.className = "talk-related";
         const label = document.createElement("span");
         label.className = "talk-related-label";
-        label.textContent = "相关论文";
+        label.textContent = "Related paper";
         related.appendChild(label);
 
         const rel = item.relatedPaper;
@@ -473,9 +473,12 @@
     awardRoot.innerHTML = "";
 
     function awardSortKey(date) {
-      const match = String(date || "").match(/(\d{4})\s*年\s*(\d{1,2})\s*月/);
-      if (!match) return 0;
-      return Number(match[1]) * 100 + Number(match[2]);
+      const zh = String(date || "").match(/(\d{4})\s*年\s*(\d{1,2})\s*月/);
+      if (zh) return Number(zh[1]) * 100 + Number(zh[2]);
+      const months = { Jan: 1, Feb: 2, Mar: 3, Apr: 4, May: 5, Jun: 6, Jul: 7, Aug: 8, Sep: 9, Oct: 10, Nov: 11, Dec: 12 };
+      const en = String(date || "").match(/(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+(\d{4})/);
+      if (en) return Number(en[2]) * 100 + months[en[1]];
+      return 0;
     }
 
     const awards = C.awards
@@ -682,7 +685,7 @@
         action.href = tool.url;
         action.target = "_blank";
         action.rel = "noopener";
-        action.textContent = tool.button || "打开";
+        action.textContent = tool.button || "Open";
         card.appendChild(action);
       }
 

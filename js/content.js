@@ -1,68 +1,62 @@
 /**
  * ============================================================
- * 个人主页内容配置 —— 改这里即可更新站点文案
- * 内容已根据本人简历更新（2026-11-03）；未知信息留空，页面不会显示空项
+ * Site content configuration — edit this file to update the site.
+ * English version built 2026-11-04 from the live Chinese version.
+ * Unknown information is left blank; blank items are not displayed.
  * ============================================================
  */
 
-// 文献核对助手的访问地址。最终地址仍在确认中，确认后只改这一处。
+// Research tool URLs.
 const REF_CHECKER_URL = "https://ref.jassyhong.top";
-// 实验绘图服务的访问地址。
 const TOOLS_PLOTTER_URL = "https://tools.jassyhong.top/";
-// 期刊筛选助手的访问地址。
 const JOURNAL_ADVISOR_URL = "https://journal.jassyhong.top";
-// 实验方案审查的访问地址。
 const PROTOCOL_AUDIT_URL = "https://protocol.jassyhong.top";
-// 防污配方模拟器的访问地址。
 const COATING_SIMULATOR_URL = "https://simulator.jassyhong.top";
 
 window.SITE_CONTENT = {
-  // —— 基本信息 ——
-  nameZh: "洪鹤庭",
-  nameEn: "Hong Heting",
-  titleZh: "华中科技大学 · 环境科学与工程学院 博士研究生",
-  titleEn: "Ph.D. Student, School of Environmental Science and Engineering, Huazhong University of Science and Technology",
+  // —— Basic information ——
+  nameZh: "Hong Heting",
+  nameEn: "",
+  titleZh: "Research Assistant, School of Environmental Science and Engineering, Huazhong University of Science and Technology",
+  titleEn: "",
   avatar: "assets/avatar.jpg",
-  // 个人简介（中文为主，可附一句英文）
   bioZh:
-    "我是洪鹤庭，目前在华中科技大学环境科学与工程学院攻读博士学位。研究聚焦生物污损与防污技术，关注多水域场景下的污损防治，以及功能涂层与物理协同手段（如 UV-C、超声）的结合应用。",
-  bioEn:
-    "Ph.D. student at the School of Environmental Science and Engineering, Huazhong University of Science and Technology, working on marine/aquatic biofouling and antifouling strategies, including gradient functional coatings and UV-C / ultrasound synergistic approaches.",
-  // 一句话 slogan
-  tagline: "生物污损 · 防污涂层 · 多水域应用",
+    "I am Hong Heting, a Research Assistant at the School of Environmental Science and Engineering, Huazhong University of Science and Technology (HUST), Wuhan, China. My research focuses on biofouling and antifouling technologies: fouling control across multiple aquatic environments, and functional coatings combined with physical approaches such as UV-C and ultrasound.",
+  bioEn: "",
+  tagline: "Biofouling · Antifouling Coatings · Multi-Aquatic Applications",
 
-  // —— 研究方向 ——
+  // —— Research interests ——
   researchInterests: [
     {
-      titleZh: "生物污损与防污",
-      titleEn: "Biofouling & Antifouling",
-      descZh: "面向海洋与淡水环境，研究微生物与大型生物污损的形成过程和识别方法，并探索材料层面的防控策略。",
+      titleZh: "Biofouling & Antifouling",
+      titleEn: "",
+      descZh: "Studying how microbial and macro-organism fouling forms in marine and freshwater environments, how to identify it, and material-level strategies to prevent and control it.",
     },
     {
-      titleZh: "多水域生物污损防治",
-      titleEn: "Multi-aquatic Biofouling Control",
-      descZh: "对比海水、淡水等不同水域条件下的污损差异，研究兼顾通用性与场景差异的防治方案及材料抗污性能评价方法。",
+      titleZh: "Multi-Aquatic Biofouling Control",
+      titleEn: "",
+      descZh: "Comparing fouling behaviour across seawater, freshwater and other aquatic conditions, and developing control strategies and material evaluation methods that balance generality with scenario-specific differences.",
     },
     {
-      titleZh: "CA@MSiO₂ 梯度涂层",
-      titleEn: "CA@MSiO₂ Gradient Coatings",
-      descZh: "基于梯度结构的功能涂层设计与制备，并评价其防污性能，关注涂层结构与防污效果之间的关系。",
+      titleZh: "CA@MSiO₂ Gradient Coatings",
+      titleEn: "",
+      descZh: "Design and fabrication of gradient-structured functional coatings, evaluation of their antifouling performance, and the relationship between coating structure and antifouling effect.",
     },
     {
-      titleZh: "UV-C / 超声协同",
-      titleEn: "UV-C & Ultrasound Synergy",
-      descZh: "结合紫外（UV-C）与超声等物理手段，研究其与功能涂层协同防污的效果与工程应用可行性。",
+      titleZh: "UV-C & Ultrasound Synergy",
+      titleEn: "",
+      descZh: "Combining physical methods such as UV-C and ultrasound with functional coatings to study synergistic antifouling effects and their engineering feasibility.",
     },
     {
-      titleZh: "增材制造",
-      titleEn: "Additive Manufacturing",
-      descZh: "结合激光增材制造制备功能涂层，用于防污与材料表面防护，关注成形方式与涂层抗污表现之间的关系。",
+      titleZh: "Additive Manufacturing",
+      titleEn: "",
+      descZh: "Preparing functional coatings by laser additive manufacturing for antifouling and surface protection, focusing on how the forming route affects coating antifouling performance.",
     },
   ],
 
-  // —— 论文列表 ——
-  // 每条可含：year, title, authors, venue, doi, pdf, link
-  // 列表据本人简历整理（2026-11-03）；简历未给出的 DOI 不猜测、不填写
+  // —— Publications ——
+  // Fields: year, title, authors, venue, doi, pdf, link.
+  // Compiled from the author's CV (2026-11-03); DOIs not given in the CV are not guessed.
   publications: [
     {
       year: "2025",
@@ -130,7 +124,7 @@ window.SITE_CONTENT = {
     {
       year: "2023",
       title: "Progress in marine antifouling coatings: Current status and prospects",
-      authors: "Li, L., Hong, H., Cao, J., & Yang, Y.（共同第一作者）",
+      authors: "Li, L., Hong, H., Cao, J., & Yang, Y. (co-first author)",
       venue: "Coatings, 13(11), 1893",
       doi: "",
       pdf: "",
@@ -147,157 +141,51 @@ window.SITE_CONTENT = {
     },
   ],
 
-  // —— 专利列表 ——
-  // Google Patents 发明人检索「洪鹤庭」去重后列入（2026-11-03）。
-  // 本人确认下列四件并非本人专利，已删除且不再列入：
-  // CN122019895A、CN117232636A、CN105496050A、CN203576054U。
-  // date 为授权日，无授权日则用公开日；保持倒序。有 link 时专利号链到中文页。
+  // —— Patents ——
+  // Chinese patents; titles translated from the Chinese originals.
+  // date is the grant date, or the publication date where no grant date applies; descending order.
   patents: [
-    {
-      date: "2025-05-06",
-      title: "一种耐磨耐蚀的激光熔覆防污涂层制备装置及方法",
-      number: "CN119040872B",
-      link: "https://patents.google.com/patent/CN119040872B/zh",
-    },
-    {
-      date: "2024-12-27",
-      title: "一种模拟海洋环境的材料防污性能快速评估装置及方法",
-      number: "CN119198518A",
-      link: "https://patents.google.com/patent/CN119198518A/zh",
-    },
-    {
-      date: "2024-02-06",
-      title: "一种可漂浮的便携箱式水质检测装置",
-      number: "CN114509552B",
-      link: "https://patents.google.com/patent/CN114509552B/zh",
-    },
-    {
-      date: "2023-05-23",
-      title: "一种材料静态抗藻能力评估装置",
-      number: "CN219068293U",
-      link: "https://patents.google.com/patent/CN219068293U/zh",
-    },
-    {
-      date: "2023-04-04",
-      title: "一种材料静态抗藻能力评估装置",
-      number: "CN115914843A",
-      link: "https://patents.google.com/patent/CN115914843A/zh",
-    },
-    {
-      date: "2023-01-13",
-      title: "一种生物污损动态模拟实验装置",
-      number: "CN218298173U",
-      link: "https://patents.google.com/patent/CN218298173U/zh",
-    },
-    {
-      date: "2023-01-13",
-      title: "一种生物污损评价实验装置",
-      number: "CN218298041U",
-      link: "https://patents.google.com/patent/CN218298041U/zh",
-    },
-    {
-      date: "2022-11-08",
-      title: "一种传感器探头用多功能协同防污去污装置",
-      number: "CN217766379U",
-      link: "https://patents.google.com/patent/CN217766379U/zh",
-    },
-    {
-      date: "2022-09-30",
-      title: "一种生物污损评价实验装置及方法",
-      number: "CN115128072A",
-      link: "https://patents.google.com/patent/CN115128072A/zh",
-    },
-    {
-      date: "2022-09-16",
-      title: "一种传感器探头用多功能协同防污去污装置",
-      number: "CN115060866A",
-      link: "https://patents.google.com/patent/CN115060866A/zh",
-    },
-    {
-      date: "2022-08-02",
-      title: "基于模块化的水陆空三用空气和水环境监测装置",
-      number: "CN114839333A",
-      link: "https://patents.google.com/patent/CN114839333A/zh",
-    },
-    {
-      date: "2022-07-29",
-      title: "基于模块化的水陆空三用空气和水环境监测装置",
-      number: "CN217084921U",
-      link: "https://patents.google.com/patent/CN217084921U/zh",
-    },
-    {
-      date: "2022-06-28",
-      title: "一种淡水养殖用附着生物模拟实验装置",
-      number: "CN216821334U",
-      link: "https://patents.google.com/patent/CN216821334U/zh",
-    },
-    {
-      date: "2022-06-14",
-      title: "一种鱼缸用上置式自清洗杀菌循环过滤装置",
-      number: "CN216722746U",
-      link: "https://patents.google.com/patent/CN216722746U/zh",
-    },
-    {
-      date: "2020-06-26",
-      title: "一种新型空气净化加湿器",
-      number: "CN210861468U",
-      link: "https://patents.google.com/patent/CN210861468U/zh",
-    },
-    {
-      date: "2020-05-08",
-      title: "机械回力圆规",
-      number: "CN210478226U",
-      link: "https://patents.google.com/patent/CN210478226U/zh",
-    },
-    {
-      date: "2020-04-17",
-      title: "一种节能型冷式空气蒸发加湿器",
-      number: "CN210345754U",
-      link: "https://patents.google.com/patent/CN210345754U/zh",
-    },
-    {
-      date: "2019-12-31",
-      title: "空气净化加湿器",
-      number: "CN305525052S",
-      link: "https://patents.google.com/patent/CN305525052S/zh",
-    },
-    {
-      date: "2019-12-27",
-      title: "一种自给水式除湿净化一体清洁装置",
-      number: "CN110613403A",
-      link: "https://patents.google.com/patent/CN110613403A/zh",
-    },
-    {
-      date: "2019-11-26",
-      title: "加湿器",
-      number: "CN305460744S",
-      link: "https://patents.google.com/patent/CN305460744S/zh",
-    },
+    { date: "2025-05-06", title: "Apparatus and method for preparing a wear- and corrosion-resistant laser-cladded antifouling coating", number: "CN119040872B", link: "https://patents.google.com/patent/CN119040872B/en" },
+    { date: "2024-12-27", title: "Apparatus and method for rapid evaluation of material antifouling performance in a simulated marine environment", number: "CN119198518A", link: "https://patents.google.com/patent/CN119198518A/en" },
+    { date: "2024-02-06", title: "Floatable portable box-type water quality detection device", number: "CN114509552B", link: "https://patents.google.com/patent/CN114509552B/en" },
+    { date: "2023-05-23", title: "Device for evaluating the static anti-algal performance of materials", number: "CN219068293U", link: "https://patents.google.com/patent/CN219068293U/en" },
+    { date: "2023-04-04", title: "Device for evaluating the static anti-algal performance of materials", number: "CN115914843A", link: "https://patents.google.com/patent/CN115914843A/en" },
+    { date: "2023-01-13", title: "Experimental device for dynamic simulation of biofouling", number: "CN218298173U", link: "https://patents.google.com/patent/CN218298173U/en" },
+    { date: "2023-01-13", title: "Experimental device for biofouling evaluation", number: "CN218298041U", link: "https://patents.google.com/patent/CN218298041U/en" },
+    { date: "2022-11-08", title: "Multifunctional synergistic antifouling and cleaning device for sensor probes", number: "CN217766379U", link: "https://patents.google.com/patent/CN217766379U/en" },
+    { date: "2022-09-30", title: "Device and method for biofouling evaluation", number: "CN115128072A", link: "https://patents.google.com/patent/CN115128072A/en" },
+    { date: "2022-09-16", title: "Multifunctional synergistic antifouling and cleaning device for sensor probes", number: "CN115060866A", link: "https://patents.google.com/patent/CN115060866A/en" },
+    { date: "2022-08-02", title: "Modular air and water environment monitoring device for land, water and air use", number: "CN114839333A", link: "https://patents.google.com/patent/CN114839333A/en" },
+    { date: "2022-07-29", title: "Modular air and water environment monitoring device for land, water and air use", number: "CN217084921U", link: "https://patents.google.com/patent/CN217084921U/en" },
+    { date: "2022-06-28", title: "Experimental device simulating attached organisms for freshwater aquaculture", number: "CN216821334U", link: "https://patents.google.com/patent/CN216821334U/en" },
+    { date: "2022-06-14", title: "Top-mounted self-cleaning sterilizing circulation filter device for fish tanks", number: "CN216722746U", link: "https://patents.google.com/patent/CN216722746U/en" },
+    { date: "2020-06-26", title: "A novel air-purifying humidifier", number: "CN210861468U", link: "https://patents.google.com/patent/CN210861468U/en" },
+    { date: "2020-05-08", title: "Mechanical spring-back compass", number: "CN210478226U", link: "https://patents.google.com/patent/CN210478226U/en" },
+    { date: "2020-04-17", title: "An energy-saving cold-type evaporative air humidifier", number: "CN210345754U", link: "https://patents.google.com/patent/CN210345754U/en" },
+    { date: "2019-12-31", title: "Air-purifying humidifier (design)", number: "CN305525052S", link: "https://patents.google.com/patent/CN305525052S/en" },
+    { date: "2019-12-27", title: "Self-water-supply integrated dehumidifying, purifying and cleaning device", number: "CN110613403A", link: "https://patents.google.com/patent/CN110613403A/en" },
+    { date: "2019-11-26", title: "Humidifier (design)", number: "CN305460744S", link: "https://patents.google.com/patent/CN305460744S/en" },
   ],
 
-  // —— 学术会议与报告 ——
-  // date / location 留空时页面不显示该项；未能从照片确认的不要补写
-  // photo：封面（兼容旧字段）；photos：可选图集，项为 {src, caption} 或路径字符串
-  // 仅一张图时只显示封面；两张及以上在封面下显示小图廊
+  // —— Conferences & talks ——
+  // Blank date/location fields are not displayed.
+  // photo: cover image; photos: optional gallery of {src, caption} or path strings.
   conferences: [
     {
       id: "icc22",
-      nameZh: "第22届世界腐蚀大会",
-      nameEn: "22nd International Corrosion Congress (ICC 2024)",
-      type: "口头报告 · Oral presentation",
-      titleZh: "含铜不锈钢在淡水中的防污性能与机制研究",
-      titleEn: "Research on the Antifouling Performance and Mechanism of Copper-bearing Stainless Steel in Freshwater",
+      nameZh: "22nd International Corrosion Congress (ICC 2024)",
+      nameEn: "",
+      type: "Oral presentation",
+      titleZh: "Research on the Antifouling Performance and Mechanism of Copper-bearing Stainless Steel in Freshwater",
+      titleEn: "",
       summary:
-        "对比 316L 与 316L-Cu 不锈钢表面淡水藻类附着过程，阐明铜离子抑制藻类光合作用、削弱多糖粘附与致密生物膜形成的防污机制。",
-      date: "2024年10月22–26日",
-      location: "中国·西安",
+        "Compared freshwater algal attachment on 316L and 316L-Cu stainless steel surfaces, and elucidated the antifouling mechanism by which copper ions inhibit algal photosynthesis, weaken polysaccharide adhesion and suppress dense biofilm formation.",
+      date: "October 22–26, 2024",
+      location: "Xi'an, China",
       photo: "assets/conferences/icc22-01.jpg",
-      photoCaption: "口头报告现场，讲台标识第22届世界腐蚀大会",
+      photoCaption: "Oral presentation; the lectern carries the 22nd International Corrosion Congress branding",
       photos: [
-        {
-          src: "assets/conferences/icc22-01.jpg",
-          caption: "口头报告现场，讲台标识第22届世界腐蚀大会",
-        },
+        { src: "assets/conferences/icc22-01.jpg", caption: "Oral presentation; the lectern carries the 22nd International Corrosion Congress branding" },
       ],
       relatedPaper: {
         authors: "Heting Hong, Jinlong Zhao, Yange Yang, Xuezhi Zhang, Chunguang Yang, Ke Yang, Aijuan Deng",
@@ -309,331 +197,288 @@ window.SITE_CONTENT = {
     },
     {
       id: "icmcf20",
-      nameZh: "第20届国际海洋腐蚀与污损大会",
-      nameEn: "The 20th International Congress on Marine Corrosion and Fouling (ICMCF)",
-      type: "口头报告 · Oral presentation",
-      titleZh: "含铜不锈钢在淡水中的防污性能与机制研究",
-      titleEn: "Research on the Antifouling Performance and Mechanism of Copper-bearing Stainless Steel in Freshwater",
-      date: "2024年",
-      location: "中国·广州",
+      nameZh: "The 20th International Congress on Marine Corrosion and Fouling (ICMCF)",
+      nameEn: "",
+      type: "Oral presentation",
+      titleZh: "Research on the Antifouling Performance and Mechanism of Copper-bearing Stainless Steel in Freshwater",
+      titleEn: "",
+      date: "2024",
+      location: "Guangzhou, China",
       photo: "assets/conferences/icmcf20-01.jpg",
-      photoCaption: "口头报告现场，讲台与幻灯片标注 ICMCF 2024 Guangzhou",
+      photoCaption: "Oral presentation; lectern and slides marked ICMCF 2024 Guangzhou",
       photos: [
-        {
-          src: "assets/conferences/icmcf20-01.jpg",
-          caption: "口头报告现场，讲台与幻灯片标注 ICMCF 2024 Guangzhou",
-        },
+        { src: "assets/conferences/icmcf20-01.jpg", caption: "Oral presentation; lectern and slides marked ICMCF 2024 Guangzhou" },
       ],
     },
     {
       id: "ifmcf9",
-      nameZh: "2024（第九届）国际海洋防腐与防污论坛",
-      nameEn: "2024 The 9th International Forum on Marine Corrosion and Fouling (IFMCF)",
-      type: "参会",
+      nameZh: "2024 The 9th International Forum on Marine Corrosion and Fouling (IFMCF)",
+      nameEn: "",
+      type: "Attended",
       titleZh: "",
       titleEn: "",
-      date: "2024年4月17–19日",
-      location: "中国·浙江宁波",
+      date: "April 17–19, 2024",
+      location: "Ningbo, Zhejiang, China",
       photo: "assets/conferences/ifmcf9-01.jpg",
-      photoCaption: "主会场舞台合影，背景幕布为论坛名称与日期地点",
+      photoCaption: "Group photo on the main stage; the backdrop shows the forum name, dates and venue",
       photos: [
-        {
-          src: "assets/conferences/ifmcf9-01.jpg",
-          caption: "主会场舞台合影，背景幕布为论坛名称与日期地点",
-        },
+        { src: "assets/conferences/ifmcf9-01.jpg", caption: "Group photo on the main stage; the backdrop shows the forum name, dates and venue" },
       ],
     },
     {
       id: "marine-fouling-6",
-      nameZh: "海洋装备防污防腐材料与技术论坛暨第六届海洋污损防护技术研讨会",
-      nameEn: "Marine Equipment Antifouling and Anticorrosion Materials and Technology Forum & The 6th Marine Biofouling Protection Technology Symposium",
-      type: "口头报告 · Oral presentation",
-      titleZh: "含铜不锈钢对淡水生物污损的影响及防污机制研究",
+      nameZh: "Marine Equipment Antifouling and Anticorrosion Materials and Technology Forum & The 6th Marine Biofouling Protection Technology Symposium",
+      nameEn: "",
+      type: "Oral presentation",
+      titleZh: "Effects of Copper-bearing Stainless Steel on Freshwater Biofouling and Its Antifouling Mechanism",
       titleEn: "",
       date: "",
       location: "",
       photo: "assets/conferences/marine-fouling-6-01.jpg",
-      photoCaption: "口头报告：含铜不锈钢对淡水生物污损的影响及防污机制研究",
+      photoCaption: "Oral presentation: effects of copper-bearing stainless steel on freshwater biofouling and its antifouling mechanism",
       photos: [
-        {
-          src: "assets/conferences/marine-fouling-6-01.jpg",
-          caption: "口头报告：含铜不锈钢对淡水生物污损的影响及防污机制研究",
-        },
+        { src: "assets/conferences/marine-fouling-6-01.jpg", caption: "Oral presentation: effects of copper-bearing stainless steel on freshwater biofouling and its antifouling mechanism" },
       ],
     },
     {
       id: "cmc2022-2023",
-      nameZh: "中国材料大会 2022-2023",
-      nameEn: "Chinese Materials Conference 2022-2023 (CMC 2022-2023)",
-      type: "参会",
+      nameZh: "Chinese Materials Conference 2022-2023 (CMC 2022-2023)",
+      nameEn: "",
+      type: "Attended",
       titleZh: "",
       titleEn: "",
-      date: "2022–2023年",
+      date: "2022–2023",
       location: "",
       photo: "assets/conferences/cmc2022-2023-01.jpg",
-      photoCaption: "讲台旁领取证书，讲台标注 CMC 2022-2023 中国材料大会",
+      photoCaption: "Receiving a certificate by the lectern marked CMC 2022-2023 / Chinese Materials Conference",
       photos: [
-        {
-          src: "assets/conferences/cmc2022-2023-01.jpg",
-          caption: "讲台旁领取证书，讲台标注 CMC 2022-2023 中国材料大会",
-        },
-        {
-          src: "assets/conferences/cmc2022-2023-02.jpg",
-          caption: "展区背景板可见 CMC / 中国材料大会 / Chinese Materials Conference",
-        },
+        { src: "assets/conferences/cmc2022-2023-01.jpg", caption: "Receiving a certificate by the lectern marked CMC 2022-2023 / Chinese Materials Conference" },
+        { src: "assets/conferences/cmc2022-2023-02.jpg", caption: "Exhibition backdrop with CMC / Chinese Materials Conference branding" },
       ],
     },
     {
       id: "icbe-iycbse2023",
-      nameZh: "第七届国际仿生工程大会暨国际仿生科学与工程青年会议",
-      nameEn: "The 7th International Conference of Bionic Engineering & The International Youth Conference of Bionic Science and Engineering 2023 (ICBE & IYCBSE 2023)",
-      type: "参会",
+      nameZh: "The 7th International Conference of Bionic Engineering & The International Youth Conference of Bionic Science and Engineering 2023 (ICBE & IYCBSE 2023)",
+      nameEn: "",
+      type: "Attended",
       titleZh: "",
       titleEn: "",
-      date: "2023年10月12–15日",
-      location: "中国·武汉",
+      date: "October 12–15, 2023",
+      location: "Wuhan, China",
       photo: "assets/conferences/icbe-iycbse2023-01.jpg",
-      photoCaption: "主背景幕布合影，含会名、主办方与日期地点",
+      photoCaption: "Group photo at the main backdrop showing the conference name, organisers, dates and venue",
       photos: [
-        {
-          src: "assets/conferences/icbe-iycbse2023-01.jpg",
-          caption: "主背景幕布合影，含会名、主办方与日期地点",
-        },
-        {
-          src: "assets/conferences/icbe-iycbse2023-02.jpg",
-          caption: "分会场听会，背景可见 ICBE & IYCBSE 2023",
-        },
+        { src: "assets/conferences/icbe-iycbse2023-01.jpg", caption: "Group photo at the main backdrop showing the conference name, organisers, dates and venue" },
+        { src: "assets/conferences/icbe-iycbse2023-02.jpg", caption: "Attending a parallel session; ICBE & IYCBSE 2023 branding in the background" },
       ],
     },
     {
       id: "polymer2023",
-      nameZh: "2023年全国高分子学术论文报告会",
-      nameEn: "2023 National Polymer Academic Paper Report Conference",
-      type: "参会",
+      nameZh: "2023 National Polymer Academic Paper Report Conference",
+      nameEn: "",
+      type: "Attended",
       titleZh: "",
       titleEn: "",
-      date: "2023年10月13–17日",
-      location: "中国·湖北武汉",
+      date: "October 13–17, 2023",
+      location: "Wuhan, Hubei, China",
       photo: "assets/conferences/polymer2023-01.jpg",
-      photoCaption: "户外主背景板合影",
+      photoCaption: "Group photo at the outdoor main backdrop",
       photos: [
-        {
-          src: "assets/conferences/polymer2023-01.jpg",
-          caption: "户外主背景板合影",
-        },
+        { src: "assets/conferences/polymer2023-01.jpg", caption: "Group photo at the outdoor main backdrop" },
       ],
     },
     {
       id: "icpi2023",
-      nameZh: "2023国际光化学与工业会议",
-      nameEn: "2023 International Conference on Photochemistry and Industry (ICPI 2023)",
-      type: "参会",
+      nameZh: "2023 International Conference on Photochemistry and Industry (ICPI 2023)",
+      nameEn: "",
+      type: "Attended",
       titleZh: "",
       titleEn: "",
-      date: "2023年10月10–13日",
-      location: "中国·武汉",
+      date: "October 10–13, 2023",
+      location: "Wuhan, China",
       photo: "assets/conferences/icpi2023-01.jpg",
-      photoCaption: "科技成果转化高峰论坛背景板合影",
+      photoCaption: "Group photo at the backdrop of the technology-transfer summit forum",
       photos: [
-        {
-          src: "assets/conferences/icpi2023-01.jpg",
-          caption: "科技成果转化高峰论坛背景板合影",
-        },
+        { src: "assets/conferences/icpi2023-01.jpg", caption: "Group photo at the backdrop of the technology-transfer summit forum" },
       ],
     },
     {
       id: "astf5",
-      nameZh: "第五届抗菌科学与技术论坛",
-      nameEn: "ASTF 2023 (5th) Antimicrobial Science and Technology Forum",
-      type: "参会",
+      nameZh: "ASTF 2023 (5th) Antimicrobial Science and Technology Forum",
+      nameEn: "",
+      type: "Attended",
       titleZh: "",
       titleEn: "",
-      date: "2023年",
+      date: "2023",
       location: "",
       photo: "assets/conferences/astf5-01.jpg",
-      photoCaption: "会场交流发言，画面角标 ASTF 2023 第5届",
+      photoCaption: "Speaking during a session exchange; ASTF 2023 (5th) logo visible in the corner",
       photos: [
-        {
-          src: "assets/conferences/astf5-01.jpg",
-          caption: "会场交流发言，画面角标 ASTF 2023 第5届",
-        },
+        { src: "assets/conferences/astf5-01.jpg", caption: "Speaking during a session exchange; ASTF 2023 (5th) logo visible in the corner" },
       ],
     },
     {
       id: "ieee-nems2021",
-      nameZh: "第16届IEEE国际纳米/微米工程与分子系统会议",
-      nameEn: "The 16th IEEE International Conference on Nano/Micro Engineered and Molecular Systems (IEEE-NEMS 2021)",
-      type: "参会",
+      nameZh: "The 16th IEEE International Conference on Nano/Micro Engineered and Molecular Systems (IEEE-NEMS 2021)",
+      nameEn: "",
+      type: "Attended",
       titleZh: "",
       titleEn: "",
-      date: "2021年4月25–29日",
+      date: "April 25–29, 2021",
       location: "",
       photo: "assets/conferences/ieee-nems2021-01.jpg",
-      photoCaption: "舞台与大屏合影，大屏为 IEEE-NEMS 2021",
+      photoCaption: "Group photo on stage; the main screen shows IEEE-NEMS 2021",
       photos: [
-        {
-          src: "assets/conferences/ieee-nems2021-01.jpg",
-          caption: "舞台与大屏合影，大屏为 IEEE-NEMS 2021",
-        },
+        { src: "assets/conferences/ieee-nems2021-01.jpg", caption: "Group photo on stage; the main screen shows IEEE-NEMS 2021" },
       ],
     },
     {
       id: "baidu-agent-summit",
-      nameZh: "超级智能体大会（百度搭子实训营）",
-      nameEn: "Baidu Agent Summit / Super Agent Summit",
-      type: "科技活动",
-      titleZh: "防污技术宣传海报设计（屏幕演示任务名）",
+      nameZh: "Baidu Agent Summit / Super Agent Summit",
+      nameEn: "",
+      type: "Tech event",
+      titleZh: "Antifouling Technology Promotional Poster Design (demo task title shown on screen)",
       titleEn: "",
-      date: "2026年10月29日",
+      date: "October 29, 2026",
       location: "",
       photo: "assets/conferences/baidu-agent-summit-01.jpg",
-      photoCaption: "舞台地标与屏幕可见「超级智能体大会」；任务栏日期 2026/10/29",
+      photoCaption: "Stage landmark and screen showing the Super Agent Summit; taskbar date 2026/10/29",
       photos: [
-        {
-          src: "assets/conferences/baidu-agent-summit-01.jpg",
-          caption: "舞台地标与屏幕可见「超级智能体大会」；任务栏日期 2026/10/29",
-        },
+        { src: "assets/conferences/baidu-agent-summit-01.jpg", caption: "Stage landmark and screen showing the Super Agent Summit; taskbar date 2026/10/29" },
       ],
     },
     {
       id: "grok-bot-meetup",
-      nameZh: "Grok Bot Meetup",
-      nameEn: "Grok Bot Meetup (banner: Presented by SpaceX)",
-      type: "科技活动",
-      titleZh: "防污行业周报（演示内容）",
+      nameZh: "Grok Bot Meetup (banner: Presented by SpaceX)",
+      nameEn: "",
+      type: "Tech event",
+      titleZh: "Antifouling Industry Weekly Brief (demo content)",
       titleEn: "",
-      date: "约2026年10月（屏幕周报区间 2026年9月28日–10月12日）",
+      date: "c. October 2026 (weekly brief on screen covers September 28 – October 12, 2026)",
       location: "",
       photo: "assets/conferences/grok-bot-meetup-01.jpg",
-      photoCaption: "讲台发言，左侧横幅 Welcome / Grok Bot Meetup；屏幕为防污行业周报",
+      photoCaption: "Speaking at the lectern; Welcome / Grok Bot Meetup banner on the left, antifouling industry weekly brief on screen",
       photos: [
-        {
-          src: "assets/conferences/grok-bot-meetup-01.jpg",
-          caption: "讲台发言，左侧横幅 Welcome / Grok Bot Meetup；屏幕为防污行业周报",
-        },
+        { src: "assets/conferences/grok-bot-meetup-01.jpg", caption: "Speaking at the lectern; Welcome / Grok Bot Meetup banner on the left, antifouling industry weekly brief on screen" },
       ],
     },
   ],
 
-  // —— 教育 / 经历 ——
-  // 据本人简历整理；简历中本科阶段有两段院校记录、表述不明确，未列入，待本人确认后补充
+  // —— Education & experience ——
   education: [
     {
-      period: "2024年至今",
-      degree: "博士研究生 · 环境科学与工程学院",
-      school: "华中科技大学",
-      schoolEn: "Huazhong University of Science and Technology (HUST)",
+      period: "2024 – Present",
+      degree: "Research Assistant · School of Environmental Science and Engineering",
+      school: "Huazhong University of Science and Technology (HUST)",
+      schoolEn: "",
     },
     {
-      period: "2021–2024年",
-      degree: "硕士 · 机械工程（GPA 3.58）",
-      school: "东北大学（沈阳）",
-      schoolEn: "Northeastern University, Shenyang",
+      period: "2021 – 2024",
+      degree: "M.S. · Mechanical Engineering (GPA 3.58)",
+      school: "Northeastern University, Shenyang",
+      schoolEn: "",
     },
   ],
 
-  // —— 获奖 ——
-  // 按提供的原文列入；同一名称与日期的重复项只保留一条。展示时按日期倒序，同月并列。
+  // —— Honors & awards ——
+  // Listed from the author's records; duplicates of the same name and date are kept once.
+  // Displayed in descending date order.
   awards: [
-    { nameZh: "2021年北卡罗莱纳州立大学冬季科研海报竞赛第二名", date: "2021年3月" },
-    { nameZh: "第十四届iCAN国际创新创业大赛中国总决赛三等奖", date: "2020年12月" },
-    { nameZh: "第十四届iCAN国际创新创业大赛西北赛区选拔赛二等奖", date: "2020年11月" },
-    { nameZh: "第六届「互联网+」大学生创新创业大赛高教主赛道银奖", date: "2020年9月" },
-    { nameZh: "2020年「挑战杯」全区大学生创业计划竞赛铜奖", date: "2020年9月" },
-    { nameZh: "西南交通大学机械工程学院2019年优秀大学生暑期学术夏令营优秀营员", date: "2020年8月" },
-    { nameZh: "2020年「广东工业大学机电工程学院优秀大学生读研暑期夏令营」优秀营员", date: "2020年8月" },
-    { nameZh: "第十二届全国三维数字化创新设计大赛全国总决赛三等奖", date: "2019年12月" },
-    { nameZh: "第十二届全国三维数字化创新设计大赛宁夏赛区三等奖", date: "2019年10月" },
-    { nameZh: "第十二届全国三维数字化创新设计大赛宁夏赛区特等奖", date: "2019年10月" },
-    { nameZh: "2019年数字科技文化节暨全国3D大赛12周年精英联赛全国总决赛二等奖", date: "2019年9月" },
-    { nameZh: "2019年全国高校创新英语挑战赛优秀奖", date: "2019年9月" },
-    { nameZh: "第五届「互联网+」大学生创新创业大赛高教主赛道铜奖", date: "2019年9月" },
-    { nameZh: "2019年数字科技文化节暨全国3D大赛12周年经营联赛宁夏赛区特等奖", date: "2019年7月" },
-    { nameZh: "第一届「亿达杯」SOLIDWORKS设计大赛二等奖", date: "2019年7月" },
-    { nameZh: "创新杯全国设计大赛一等奖", date: "2019年6月" },
-    { nameZh: "华夏杯科技创新大赛一等奖", date: "2019年6月" },
-    { nameZh: "华创杯国家科技大赛大学生组一等奖", date: "2019年6月" },
-    { nameZh: "2019年第三届全国大学生环保知识竞赛全国决赛特等奖", date: "2019年6月" },
-    { nameZh: "2019年全国大学生英语竞赛(NECCS)三等奖", date: "2019年5月" },
-    { nameZh: "第十一届全国三维数字化创新设计大赛宁夏赛区一等奖", date: "2018年10月" },
-    { nameZh: "第二届全国大学生环保知识竞赛优秀奖", date: "2018年4月" },
-    { nameZh: "HILIP's Golden Ears Passed", date: "2017年10月" },
+    { nameZh: "2nd Place, 2021 Winter Research Poster Competition, North Carolina State University", date: "Mar 2021" },
+    { nameZh: "Third Prize, China National Finals, 14th iCAN International Innovation & Entrepreneurship Competition", date: "Dec 2020" },
+    { nameZh: "Second Prize, Northwest Regional Selection, 14th iCAN International Innovation & Entrepreneurship Competition", date: "Nov 2020" },
+    { nameZh: "Silver Award, Higher-Education Main Track, 6th China International College Students' 'Internet+' Innovation and Entrepreneurship Competition", date: "Sep 2020" },
+    { nameZh: "Bronze Award, 2020 'Challenge Cup' Regional College Student Entrepreneurship Plan Competition", date: "Sep 2020" },
+    { nameZh: "Outstanding Camper, 2019 Excellent College Student Summer Academic Camp, School of Mechanical Engineering, Southwest Jiaotong University", date: "Aug 2020" },
+    { nameZh: "Outstanding Camper, 2020 Summer Camp for Prospective Graduate Students, School of Electromechanical Engineering, Guangdong University of Technology", date: "Aug 2020" },
+    { nameZh: "Third Prize, National Finals, 12th National 3D Digital Innovation Design Competition", date: "Dec 2019" },
+    { nameZh: "Third Prize, Ningxia Division, 12th National 3D Digital Innovation Design Competition", date: "Oct 2019" },
+    { nameZh: "Grand Prize, Ningxia Division, 12th National 3D Digital Innovation Design Competition", date: "Oct 2019" },
+    { nameZh: "Second Prize, National Finals, 2019 Digital Technology Culture Festival & National 3D Competition 12th Anniversary Elite League", date: "Sep 2019" },
+    { nameZh: "Excellence Award, 2019 National College Innovation English Challenge", date: "Sep 2019" },
+    { nameZh: "Bronze Award, Higher-Education Main Track, 5th 'Internet+' Innovation and Entrepreneurship Competition", date: "Sep 2019" },
+    { nameZh: "Grand Prize, Ningxia Division, 2019 Digital Technology Culture Festival & National 3D Competition 12th Anniversary Elite League", date: "Jul 2019" },
+    { nameZh: "Second Prize, 1st 'Yida Cup' SOLIDWORKS Design Competition", date: "Jul 2019" },
+    { nameZh: "First Prize, Innovation Cup National Design Competition", date: "Jun 2019" },
+    { nameZh: "First Prize, Huaxia Cup Science and Technology Innovation Competition", date: "Jun 2019" },
+    { nameZh: "First Prize, College Division, Huachuang Cup National Science and Technology Competition", date: "Jun 2019" },
+    { nameZh: "Grand Prize, National Finals, 3rd National College Environmental Knowledge Competition (2019)", date: "Jun 2019" },
+    { nameZh: "Third Prize, 2019 National English Competition for College Students (NECCS)", date: "May 2019" },
+    { nameZh: "First Prize, Ningxia Division, 11th National 3D Digital Innovation Design Competition", date: "Oct 2018" },
+    { nameZh: "Excellence Award, 2nd National College Environmental Knowledge Competition", date: "Apr 2018" },
+    { nameZh: "HILIP's Golden Ears Passed", date: "Oct 2017" },
   ],
 
-  // —— 技能证书与英语 ——
-  // 只收录提供的原文，不补分数、等级或未列出的证书。
+  // —— Certificates & English proficiency ——
+  // Only the records provided by the author; no scores, levels or certificates are added.
   certificates: [
-    { issuer: "全国计算机等级考试", name: "二级 Python" },
-    { issuer: "全国三维数字化技术应用能力认证", name: "3Dv6" },
-    { issuer: "阿里云认证", name: "阿里云 Apsara Clouder 云安全专项技能认证" },
-    { issuer: "全国标准化考试联盟认证", name: "机械 CAD 设计工程师高级" },
-    { issuer: "中华人民共和国职业资格证书", name: "车工" },
-    { issuer: "Dassault Systems", name: "Professional in Mechanical Design" },
+    { issuer: "National Computer Rank Examination (NCRE), China", name: "Level 2 — Python" },
+    { issuer: "National 3D Digital Technology Application Certification, China", name: "3Dv6" },
+    { issuer: "Alibaba Cloud Certification", name: "Apsara Clouder — Cloud Security Specialist" },
+    { issuer: "National Standardized Examination Alliance Certification, China", name: "Mechanical CAD Design Engineer, Advanced Level" },
+    { issuer: "National Vocational Qualification Certificate, PRC", name: "Lathe Operator" },
+    { issuer: "Dassault Systèmes", name: "Professional in Mechanical Design" },
   ],
   english: [
-    { name: "全国大学英语四级考试", detail: "总分：509，口语：B" },
-    { name: "全国大学英语六级考试", detail: "总分：504，口语：B" },
+    { name: "College English Test Band 4 (CET-4)", detail: "Score: 509; Speaking: B" },
+    { name: "College English Test Band 6 (CET-6)", detail: "Score: 504; Speaking: B" },
     { name: "IELTS 6.5" },
   ],
 
-  // —— 联系与简历 ——
+  // —— Contact & CV ——
   contact: {
-    // 本人提供的联系邮箱（2026-11-03）
     email: "jassy.hong@gmail.com",
     phone: "+86 17607144929",
-    // 本人提供的 Google Scholar（2026-11-03）；ORCID 未提供，留空时不显示按钮
     scholar: "https://scholar.google.com/citations?user=LtcmU_gAAAAJ&hl=en",
     researchgate: "https://www.researchgate.net/profile/Heting-Hong-2",
-    orcid: "",
+    orcid: "https://orcid.org/0000-0002-7679-4033",
     github: "https://github.com/hongheting",
-    // 简历 PDF（本人 2026-11-03 提供）
     cv: "assets/cv.pdf",
-    // 所在城市
-    location: "武汉 · 华中科技大学",
+    location: "Wuhan · Huazhong University of Science and Technology",
   },
 
-  // —— 科研助手 ——
-  // 以后新增工具：在 tools 数组追加一项即可。
-  // 字段：name、description、button、url；status 可选，有值时显示为角标。
-  toolsNote: "更多工具陆续上线",
+  // —— Research tools ——
+  // To add a tool later, append one entry to the tools array.
+  // Fields: name, description, button, url; optional status shows as a badge.
+  toolsNote: "More tools coming soon",
   tools: [
     {
-      name: "文献核对助手",
+      name: "Reference Checker",
       description:
-        "逐条核对参考文献：DOI 是否对得上、作者/题名/年份是否写错、是否已撤稿、预印本是否有正式版；给出「原稿→正确」对照和证据链接。支持 Word/PDF/文本，免费试用 50 条。",
-      button: "开始核对",
+        "Checks references one by one: whether the DOI actually matches, whether authors, title and year are correct, whether the paper has been retracted, and whether a preprint already has a published version — with a 'manuscript → corrected' comparison and evidence links. Supports Word/PDF/text; free trial of 50 entries.",
+      button: "Start checking",
       url: REF_CHECKER_URL,
     },
     {
-      name: "科研工具 — 电化学 / SEM 一键成图",
+      name: "Research Tools — One-click Electrochemistry / SEM Figures",
       description:
-        "将电化学（EIS、OCP 等）与 SEM 数据一键生成可投稿图表，可导出 PNG/PDF，并给出拟合参数。",
-      button: "开始出图",
+        "Turns electrochemistry (EIS, OCP, etc.) and SEM data into publication-ready figures in one click, with PNG/PDF export and fitting parameters.",
+      button: "Generate figures",
       url: TOOLS_PLOTTER_URL,
     },
     {
-      name: "Journal Advisor（期刊筛选助手）",
+      name: "Journal Advisor",
       description:
-        "证据驱动的期刊候选短名单：主题匹配、DOI/ISSN 等核验与投稿指引线索；Beta 内部测试，匹配分≠录用概率。",
-      button: "开始筛选",
+        "An evidence-driven shortlist of candidate journals: topic matching, DOI/ISSN verification and submission-guideline clues. Beta (internal testing); the match score is not an acceptance probability.",
+      button: "Find journals",
       url: JOURNAL_ADVISOR_URL,
     },
     {
-      name: "ProtocolAudit（实验方案审查）",
+      name: "ProtocolAudit",
       description:
-        "上传实验方案（Word/PDF/Markdown），审查假设/分组/对照/终点/统计与常见设计陷阱，给出可改建议；Beta，需访问口令。",
-      button: "开始审查",
+        "Upload a research protocol (Word/PDF/Markdown) for a review of hypotheses, grouping, controls, endpoints, statistics and common design pitfalls, with actionable suggestions. Beta; access code required.",
+      button: "Start review",
       url: PROTOCOL_AUDIT_URL,
     },
     {
-      name: "防污配方模拟器",
+      name: "Antifouling Coating Simulator",
       description:
-        "本地优先的防污涂层证据面板：实验室代理表（轨 A）、航线相对污损压力（轨 B）、证据短名单（轨 C），以及公开文献界、商用目录与行业动态。模拟 ≠ 实测——每个数值都带诚实标签（实测 / 厂家标称 / 文献界 / 模型估计），绝不把估计写成已测。",
-      button: "打开模拟器",
+        "A local-first evidence dashboard for antifouling coatings: a laboratory proxy table (Track A), route-based relative fouling pressure (Track B) and an evidence shortlist (Track C), plus published literature bounds, commercial catalogues and industry news. Simulation ≠ measurement — every value carries an honesty label (measured / manufacturer-stated / literature bound / model estimate), and estimates are never presented as measurements.",
+      button: "Open simulator",
       url: COATING_SIMULATOR_URL,
     },
   ],
 
-  // —— 页脚 ——
-  footerNote: "科研助手入口 · Journal Advisor / ProtocolAudit / 防污配方模拟器 / 文献核对 / 出图",
+  // —— Footer ——
+  footerNote: "Research tools · Journal Advisor / ProtocolAudit / Antifouling Coating Simulator / Reference Checker / Figure Plotter",
 };
