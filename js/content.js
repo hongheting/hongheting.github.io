@@ -466,6 +466,8 @@ window.SITE_CONTENT = {
     researchgate: "https://www.researchgate.net/profile/Heting-Hong-2",
     orcid: "https://orcid.org/0000-0002-7679-4033",
     github: "https://github.com/hongheting",
+    youtube: "https://www.youtube.com/@CleanSurfaceLab",
+    x: "https://x.com/jassyhong1",
     cv: "assets/cv.pdf",
     location: "Wuhan · Huazhong University of Science and Technology",
   },

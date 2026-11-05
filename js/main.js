@@ -665,11 +665,15 @@
   const researchgate = el("link-researchgate");
   const orcid = el("link-orcid");
   const github = el("link-github");
+  const x = el("link-x");
+  const youtube = el("link-youtube");
   const cvBtn = el("link-cv");
   setHref(scholar, contact.scholar, true);
   setHref(researchgate, contact.researchgate, true);
   setHref(orcid, contact.orcid, true);
   setHref(github, contact.github, true);
+  setHref(x, contact.x, true);
+  setHref(youtube, contact.youtube, true);
   setHref(cvBtn, contact.cv, true);
 
   // 联系区不再生成「待补充」提示；没有链接的按钮已由 setHref 隐藏
