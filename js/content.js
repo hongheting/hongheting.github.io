@@ -17,11 +17,11 @@ window.SITE_CONTENT = {
   // —— Basic information ——
   nameZh: "Hong Heting",
   nameEn: "",
-  titleZh: "Research Assistant, School of Environmental Science and Engineering, Huazhong University of Science and Technology",
+  titleZh: "PhD Student, School of Environmental Science and Engineering, Huazhong University of Science and Technology",
   titleEn: "",
   avatar: "assets/avatar.jpg",
   bioZh:
-    "I am Hong Heting, a Research Assistant at the School of Environmental Science and Engineering, Huazhong University of Science and Technology (HUST), Wuhan, China. My research focuses on biofouling and antifouling technologies: fouling control across multiple aquatic environments, and functional coatings combined with physical approaches such as UV-C and ultrasound.",
+    "I am Hong Heting, a PhD student in Resources and Environment at the School of Environmental Science and Engineering, Huazhong University of Science and Technology (HUST), Wuhan, China. My research focuses on biofouling and antifouling technologies: fouling control across multiple aquatic environments, and functional coatings combined with physical approaches such as UV-C and ultrasound.",
   bioEn: "",
   tagline: "Biofouling · Antifouling Coatings · Multi-Aquatic Applications",
 
@@ -401,7 +401,7 @@ window.SITE_CONTENT = {
   education: [
     {
       period: "2024 – Present",
-      degree: "Research Assistant · School of Environmental Science and Engineering",
+      degree: "PhD Student · Resources and Environment, School of Environmental Science and Engineering",
       school: "Huazhong University of Science and Technology (HUST)",
       schoolEn: "",
     },
