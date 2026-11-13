@@ -12,6 +12,7 @@ const TOOLS_PLOTTER_URL = "https://tools.jassyhong.top/";
 const JOURNAL_ADVISOR_URL = "https://journal.jassyhong.top";
 const PROTOCOL_AUDIT_URL = "https://protocol.jassyhong.top";
 const COATING_SIMULATOR_URL = "https://simulator.jassyhong.top";
+const UVC_ULTRASOUND_URL = "https://uvc.jassyhong.top";
 
 window.SITE_CONTENT = {
   // —— Basic information ——
@@ -512,8 +513,15 @@ window.SITE_CONTENT = {
       button: "Open simulator",
       url: COATING_SIMULATOR_URL,
     },
+    {
+      name: "UV-C / Ultrasound Simulation Workbench",
+      description:
+        "An interactive physics workbench for coupled UV-C + ultrasound antifouling on a bowl geometry: four-zone direct-dose analysis, COMSOL-validated 28/40 kHz acoustic fields, LED drive-current power curves, calibration-point fitting, and a Bliss factorial view for CA@MSiO₂ × light/sound combinations. Screening indicators are labelled as such — backscatter dose and synergy claims stay explicitly pending experimental validation.",
+      button: "Open workbench",
+      url: UVC_ULTRASOUND_URL,
+    },
   ],
 
   // —— Footer ——
-  footerNote: "Research tools · Journal Advisor / ProtocolAudit / Antifouling Coating Simulator / Reference Checker / Figure Plotter",
+  footerNote: "Research tools · Journal Advisor / ProtocolAudit / Antifouling Coating Simulator / UV-C–Ultrasound Workbench / Reference Checker / Figure Plotter",
 };
