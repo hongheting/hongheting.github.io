@@ -22,7 +22,7 @@ window.SITE_CONTENT = {
   titleEn: "",
   avatar: "assets/avatar.jpg",
   bioZh:
-    "I am Hong Heting, a PhD student in Resources and Environment at the School of Environmental Science and Engineering, Huazhong University of Science and Technology (HUST), Wuhan, China. My research focuses on biofouling and antifouling technologies: fouling control across multiple aquatic environments, and functional coatings combined with physical approaches such as UV-C and ultrasound. I also serve as a Young Committee Member of the Commission on Ecosystem Management (CEM), International Union for Conservation of Nature (IUCN).",
+    "I am Hong Heting, a PhD student in Resources and Environment at the School of Environmental Science and Engineering, Huazhong University of Science and Technology (HUST), Wuhan, China. My research focuses on biofouling and antifouling technologies: fouling control across multiple aquatic environments, and functional coatings combined with physical approaches such as UV-C and ultrasound. I also serve as a Young Committee Member of the Commission on Ecosystem Management (CEM), International Union for Conservation of Nature (IUCN). Outside the lab, I serve as a campus ambassador for Deep Principle (Mira), for the Bohr AI4S Campus Ambassador Program, and for AsterFire Go (Sidereus AI, Ambassador No. 010), and as an ArmorIQ Ambassador.",
   bioEn: "",
   tagline: "Biofouling · Antifouling Coatings · Multi-Aquatic Applications",
 
